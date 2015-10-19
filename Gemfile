@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 #Install Device // Odpowiedzialne za logowanie i rejestracje
 gem 'devise'
 
+gem 'protected_attributes'
 #lokalizacja rubiego 
 #gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
