@@ -7,7 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <header>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			 <a class="brand">OkonBook</a>
+			 <ul class="nav">
+			 	<li><%= link_to "Wszystkie wpisy", statuses_path %></li>
+			 </ul>
+		</div>
+	</div>
+</div>
 	
 <!-- Alerty od devise -->
        <p class="notice"><%= notice %></p>
@@ -17,6 +28,12 @@
 </header>
 <!--HEADER-->
 
+
+<div class="container">
+	
+
+
+
 <%= yield %>
 
 
@@ -24,5 +41,6 @@
 
 <footer></footer>
 <!--FOOTER -->
+</div>
 </body>
 </html>

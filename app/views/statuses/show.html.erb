@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nazwa:</strong>
   <%= @status.name %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <strong>Zawartość wpisu:</strong>
   <%= @status.content %>
 </p>
 
-<%= link_to 'Edit', edit_status_path(@status) %> |
-<%= link_to 'Back', statuses_path %>
+<%= link_to 'Edytuj', edit_status_path(@status) %> |
+<%= link_to 'Cofnij', statuses_path %>
