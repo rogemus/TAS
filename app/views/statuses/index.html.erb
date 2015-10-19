@@ -10,7 +10,8 @@
 <% @statuses.each do | status | %>
 
 <div class="status">
-  <strong><%= status.name %></strong>
+  <strong>Nazwisko</strong>
+    <!--Kod opowiedzialny za pobieranie nazwiska z bazy danych kiedys tu bedzie-->
   <p><%= status.content %></p>
   <div class="meta">
     <%= link_to time_ago_in_words(status.created_at) + " temu", status %> 
