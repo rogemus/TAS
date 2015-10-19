@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+	
+<!-- Alerty od devise -->
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+<!-- end -->
+	
+</header>
+<!--HEADER-->
 
 <%= yield %>
 
+
+
+
+<footer></footer>
+<!--FOOTER -->
 </body>
 </html>
