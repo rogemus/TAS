@@ -1,0 +1,41 @@
+callback = "urn:ietf:wg:oauth:2.0:oob"
+app_id = "064cc0d6712cf08806f6e1a14fe1695ca974d29e22b1d3628f0b23bd2c2c6a9c"
+secret = "cb9d3409131a231ba4b2639b36028857037d92041f8e8620d38f9a5c0ae1d95a"
+client = OAuth2::Client.new(app_id, secret, site: "http://localhost:3000/")
+client.auth_code.authorize_url(redirect_uri: callback)
+
+access = client.auth_code.get_token('', redirect_uri: callback)
+access.get("/api/tasks").parsed
+access.post("/api/tasks", params: {task: {name: "test oauth"}})
+access.get("/api/user").parsed
+
+
+rails g doorkeeper:install
+rake db:migrate
+gem install oauth2
+irb -r oauth2
+
+
+curl -F grant_type=authorization_code \
+-F client_id=064cc0d6712cf08806f6e1a14fe1695ca974d29e22b1d3628f0b23bd2c2c6a9c \
+-F client_secret=cb9d3409131a231ba4b2639b36028857037d92041f8e8620d38f9a5c0ae1d95a \
+-F redirect_uri=urn:ietf:wg:oauth:2.0:oob \
+-X POST http://localhost:3000/oauth/token
+
+
+
+
+client = OAuth2::Client.new('064cc0d6712cf08806f6e1a14fe1695ca974d29e22b1d3628f0b23bd2c2c6a9c', 'cb9d3409131a231ba4b2639b36028857037d92041f8e8620d38f9a5c0ae1d95a', :site => 'http://localhost:3000/')
+client.auth_code.authorize_url(:redirect_uri => 'urn:ietf:wg:oauth:2.0:oob')
+
+
+###########################################
+
+client = OAuth2::Client.new('ba7f49a02f837b1f6067d0a522956a34120f6ef84049b5ab7a67297013645c3c', 'a3d7cc4ffa53854e59f0bc55c75f83fc1a99fb324c31ffbae42c3199a4e78373', :site => "http://localhost:3000/")
+access_token = client.password.get_token('john@a.com', '12345678')
+puts access_token.token
+
+
+http://0.0.0.0:3000/oauth/authorized_applications
+
+
