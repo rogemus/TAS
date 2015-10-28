@@ -1,57 +1,41 @@
 # require 'doorkeeper/grape/helpers'
 module Statuses
-	class API < Grape::API
+	class StatusesController < Grape::API
 		version 'v1', using: :path 
 		format :json
 		use ::WineBouncer::OAuth2
 
-
-		# helpers Doorkeeper::Grape::Helpers
-
-		# before do
-  #       	doorkeeper_authorize!
-  #     	end
-
+		helpers do
+			# Find the user that owns the access token
+  			def current_resource_owner
+    			User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+  			end
+		end
 
 		resource :statuses do
 
 			desc 'Return a stauses feed'
-			oauth2
+			# oauth2
 			get :statuses do
 				Status.all
+				# User.all
 			end
 
-
-
-
-			# desc 'Update a status.'
-   #   		params do
-   #    			requires :id, type: Integer, desc: 'Status ID.'
-   #      		requires :content, type: String, desc: 'Your status.'
-   #    		end
-			# put :statuses do
-			# end
-
-
-
-			desc 'Createing new user'
+			desc 'Create a status'
+			oauth2
 			params do
-				requires :first_name, type: String, desc: 'First name'
-				requires :last_name, type: String, desc: 'Last name'
-				requires :profile_name, type: String, desc: 'Profile name'
-				requires :email , type: String, desc: 'Email adress'
-				requires :password, type: String, desc: 'Password'
-				requires :password_confirmation , type: String, desc: 'Password confirmation'
-				
+				requires :content, type: String, desc: 'Status content'
 			end
-			post :statuses do
-				User.create!(params)
+			post :new do
+				Status.create!({
+					user_id: resource_owner.id,
+					content: params[:content]
+				})
 			end
+
+
+
 
 		end
-
-
-
-
 	end
 end

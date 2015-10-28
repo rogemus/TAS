@@ -1,7 +1,8 @@
 TAS::Application.routes.draw do
   use_doorkeeper
   
-  mount Statuses::API => '/api'
+  mount Statuses::StatusesController => '/api'
+  mount Users::UsersController => '/api'
 
   devise_for :users
   resources :statuses
