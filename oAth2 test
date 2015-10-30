@@ -38,4 +38,8 @@ puts access_token.token
 
 http://0.0.0.0:3000/oauth/authorized_applications
 
+#################################
+{"content":"Im mike and this UPDATED my first status"}
+Authorization: Bearer a11f94fbef5a2cc3368ba759614aa9c4043176f30bdf5a5c0dc545571e841999 (Mike)
+
 

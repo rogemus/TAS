@@ -33,6 +33,19 @@ module Statuses
 				})
 			end
 
+			desc 'Update a status.'
+			oauth2
+			params do
+				requires :id, type: Integer, desc: 'Status ID.'
+				requires :content, type: String, desc: 'Updated status content'
+			end
+			put ':id' do
+				resource_owner.statuses.find(params[:id]).update({
+					user_id: resource_owner.id,
+					content: params[:content]
+					})
+			end
+
 
 
 
