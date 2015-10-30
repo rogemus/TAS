@@ -32,7 +32,7 @@ client.auth_code.authorize_url(:redirect_uri => 'urn:ietf:wg:oauth:2.0:oob')
 ###########################################
 
 client = OAuth2::Client.new('ba7f49a02f837b1f6067d0a522956a34120f6ef84049b5ab7a67297013645c3c', 'a3d7cc4ffa53854e59f0bc55c75f83fc1a99fb324c31ffbae42c3199a4e78373', :site => "http://localhost:3000/")
-access_token = client.password.get_token('john@a.com', '12345678')
+access_token = client.password.get_token('jack@a.com', '12345678')
 puts access_token.token
 
 
@@ -42,4 +42,6 @@ http://0.0.0.0:3000/oauth/authorized_applications
 {"content":"Im mike and this UPDATED my first status"}
 Authorization: Bearer a11f94fbef5a2cc3368ba759614aa9c4043176f30bdf5a5c0dc545571e841999 (Mike)
 
+{"content":"Hi im JACK, this is my first status"}
+Bearer ca7bc018631240c9a886f1a269d1e486477830d9047901268e7cea3a9333f52f (JACK)
 
