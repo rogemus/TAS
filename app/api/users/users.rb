@@ -19,19 +19,24 @@ module Users
 				User.create!(params)
 			end
 
-			desc 'Get user private feed'
-			#oauth2
-			params do
-				requires :id, type: Integer, desc: 'User ID.'
+
+			resource :recent do
+				desc 'Get user private feed'
+				# oauth2
+				params do
+					requires :id, type: Integer, desc: 'User ID.'
+					optional :count, type: Integer, default: 2, desc: 'How many statuses' # Max 200
+					optional :min_id, type: Integer, desc: 'Status ID' #can be null
+					optional :max_id, type: Integer, desc: 'Status ID' #can be null
+					optional :min_timestamp, type: DateTime, desc: 'Min timestamp ID' #can be null
+					optional :min_timestamp, type: DateTime, desc: 'Max timestamp ID' #can be null
+
+				end
+				get ':id' do
+					Status.where("user_id = ? AND created_at >= ?", params[:id], params[:min_timestamp])
+				end
 			end
-			get ':id' do
-				User.find(params[:id])
-			end
 
-
-
-
-			
 		end
 	end
 end
