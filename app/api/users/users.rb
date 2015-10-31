@@ -2,7 +2,8 @@ module Users
 	class UsersController < Grape::API
 		version 'v1', using: :path 
 		format :json
-		# use ::WineBouncer::OAuth2
+		formatter :json, Grape::Formatter::ActiveModelSerializers
+		use ::WineBouncer::OAuth2
 		resource :users do
 
 			desc 'Createing new user'
@@ -16,6 +17,15 @@ module Users
 			end
 			post :sign_up do
 				User.create!(params)
+			end
+
+			desc 'Get user private feed'
+			#oauth2
+			params do
+				requires :id, type: Integer, desc: 'User ID.'
+			end
+			get ':id' do
+				User.find(params[:id])
 			end
 
 
