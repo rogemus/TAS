@@ -21,6 +21,25 @@ module Statuses
 				# User.all
 			end
 
+			desc 'Return amount of statuses'
+			#oauth2
+			params do
+				optional :count, type: Integer, default: 2, desc: 'How many statuses' # Max 200
+				optional :min_id, type: Integer, default: nil, desc: 'Status ID' #can be null
+				optional :max_id, type: Integer, desc: 'Status ID' #can be null
+			end
+			get :feed do
+				if params[:min_id] && params[:max_id] 
+					Status.where("id > ? AND id < ?", params[:min_id],params[:max_id]).last(params[:count])
+				elsif params[:max_id]
+					Status.where("id < ?", params[:max_id]).last(params[:count])
+				elsif params[:min_id]
+					Status.where("id > ?", params[:min_id]).last(params[:count])
+				else
+					Status.last(params[:count])
+				end
+			end
+
 			desc 'Create a status'
 			oauth2
 			params do
@@ -46,8 +65,14 @@ module Statuses
 					})
 			end
 
-
-
+			desc 'Delete a status'
+			oauth2
+			params do
+				requires :id, type: Integer, desc: 'Status ID'
+			end
+			delete ':id' do
+				current_resource_owner.statuses.find(params[:id]).destroy
+			end
 
 		end
 	end
