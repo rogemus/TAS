@@ -3,7 +3,9 @@ module Statuses
 	class StatusesController < Grape::API
 		version 'v1', using: :path 
 		format :json
+		formatter :json, Grape::Formatter::ActiveModelSerializers
 		use ::WineBouncer::OAuth2
+
 
 		helpers do
 			# Find the user that owns the access token
@@ -25,11 +27,11 @@ module Statuses
 			#oauth2
 			params do
 				optional :count, type: Integer, default: 2, desc: 'How many statuses' # Max 200
-				optional :min_id, type: Integer, default: nil, desc: 'Status ID' #can be null
+				optional :min_id, type: Integer, desc: 'Status ID' #can be null
 				optional :max_id, type: Integer, desc: 'Status ID' #can be null
 			end
 			get :feed do
-				if params[:min_id] && params[:max_id] 
+				if params[:min_id] && params[:max_id]
 					Status.where("id > ? AND id < ?", params[:min_id],params[:max_id]).last(params[:count])
 				elsif params[:max_id]
 					Status.where("id < ?", params[:max_id]).last(params[:count])

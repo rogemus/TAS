@@ -38,6 +38,9 @@ gem 'doorkeeper'
 gem 'grape'
 gem 'wine_bouncer', '~> 0.5.0'
 
+gem 'active_model_serializers'
+gem 'grape-active_model_serializers'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
