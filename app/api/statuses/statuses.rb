@@ -23,6 +23,14 @@ module Statuses
 				# User.all
 			end
 
+			desc 'Feed for user ID' 
+			params do 
+				requires :id, type: Integer, desc: 'User ID.'
+			end
+			get ':id' do
+				Status.find(params[:id])
+			end
+
 			desc 'Return amount of statuses'
 			#oauth2
 			params do
