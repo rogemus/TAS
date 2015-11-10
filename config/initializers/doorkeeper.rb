@@ -124,6 +124,10 @@ resource_owner_from_credentials do |routes|
   #   client.uid == "064cc0d6712cf08806f6e1a14fe1695ca974d29e22b1d3628f0b23bd2c2c6a9c"
   # end
 
+  # skip_authorization do |resource_owner_from_credentials, client|
+  #   client == "ba7f49a02f837b1f6067d0a522956a34120f6ef84049b5ab7a67297013645c3c"
+  # end
+
   # WWW-Authenticate Realm (default "Doorkeeper").
   # realm "Doorkeeper"
 end

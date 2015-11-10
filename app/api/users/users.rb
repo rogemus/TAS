@@ -6,6 +6,12 @@ module Users
 		use ::WineBouncer::OAuth2
 		resource :users do
 
+			desc 'Get infromation about resource owner'
+			oauth2
+			get :me, serializer: UserShortSerializer do
+				resource_owner
+			end
+
 			desc 'Createing new user'
 			params do
 				requires :first_name, type: String, desc: 'First name'
@@ -29,7 +35,7 @@ module Users
 					optional :min_id, type: Integer, desc: 'Status ID' #can be null
 					optional :max_id, type: Integer, desc: 'Status ID' #can be null
 					optional :min_timestamp, type: DateTime, desc: 'Min timestamp ID' #can be null
-					optional :min_timestamp, type: DateTime, desc: 'Max timestamp ID' #can be null
+					optional :max_timestamp, type: DateTime, desc: 'Max timestamp ID' #can be null
 
 				end
 				get ':id' do

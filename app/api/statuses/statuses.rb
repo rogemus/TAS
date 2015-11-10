@@ -23,17 +23,8 @@ module Statuses
 				# User.all
 			end
 
-			desc 'Feed for user ID' 
-			#oauth2
-			params do 
-				requires :id, type: Integer, desc: 'Post ID.'
-			end
-			get ':id' do
-				Status.find(params[:id])
-			end
-
 			desc 'Return amount of statuses'
-			#oauth2
+			# oauth2
 			params do
 				optional :count, type: Integer, default: 2, desc: 'How many statuses' # Max 200
 				optional :min_id, type: Integer, desc: 'Status ID' #can be null
@@ -61,6 +52,16 @@ module Statuses
 					user_id: resource_owner.id,
 					content: params[:content]
 				})
+			end
+
+			
+			desc 'Feed for user ID' 
+			#oauth2
+			params do 
+				requires :id, type: Integer, desc: 'Post ID.'
+			end
+			get ':id' do
+				Status.find(params[:id])
 			end
 
 			desc 'Update a status.'
