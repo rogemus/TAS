@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
     :recoverable, :rememberable, :trackable, :validatable
     
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :profile_name, :id
+                  :first_name, :last_name, :profile_name, :full_name, :id
   # attr_accessible :title, :body
   has_many :statuses
 
@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
                              with: /[a-zA-Z0-9_-]+/,
                              message: 'Must be formatted correctly.'
                            }
+
+  def full_name
+    first_name + " " + last_name
+  end
 end
