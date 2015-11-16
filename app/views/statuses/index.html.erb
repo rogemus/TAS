@@ -10,7 +10,7 @@
 <% @statuses.each do | status | %>
 
 <div class="status">
-  <strong>Nazwisko</strong>
+    <strong><%= status.user.first_name %> <%= status.user.last_name %></strong>
     <!--Kod opowiedzialny za pobieranie nazwiska z bazy danych kiedys tu bedzie-->
   <p><%= status.content %></p>
   <div class="meta">
