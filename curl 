@@ -1,0 +1,38 @@
+curl -F grant_type=authorization_code \
+-F client_id=ac5bdc7612b15209a6e6407460449b15c058c3e4ece9af06c2a9adbc02ea1cbf \
+-F client_secret=b40b62d17462359d31e188415ae4e192056b201ffc2446d59b98454e2d07090a \
+-F code=ZP3961TIJnH6CjCCGqiZUzS/L8+AE4NZwYjbNw6xDyk= \
+-F redirect_uri=urn:ietf:wg:oauth:2.0:oob \
+-X POST http://coputer.science:3000/oauth/token
+
+
+curl -F response_type=code \
+-F client_id=ac5bdc7612b15209a6e6407460449b15c058c3e4ece9af06c2a9adbc02ea1cbf \
+-F client_secret=b40b62d17462359d31e188415ae4e192056b201ffc2446d59b98454e2d07090a \
+-F redirect_uri=urn:ietf:wg:oauth:2.0:oob \
+-F username=jack@a.com \
+-F password=12345678 \
+-X GET http://coputer.science:3000/oauth/authorize
+
+curl -i http://0.0.0.0:3000/oauth/token \
+     -F grant_type=password \
+     -F client_id=ba7f49a02f837b1f6067d0a522956a34120f6ef84049b5ab7a67297013645c3c \
+     -F client_secret=a3d7cc4ffa53854e59f0bc55c75f83fc1a99fb324c31ffbae42c3199a4e78373 \
+     -F username=jack@a.com \
+     -F password=12345678
+
+
+curl -F grant_type=password \
+-F client_id=9b36d8c0db59eff5038aea7a417d73e69aea75b41aac771816d2ef1b3109cc2f \
+-F client_secret=d6ea27703957b69939b8104ed4524595e210cd2e79af587744a7eb6e58f5b3d2 \
+   -F username=jack@a.com \
+     -F password=12345678\
+-X POST http://localhost:3000/oauth/token
+
+
+curl -i http://localhost:3000/oauth/token \
+     -F grant_type=password \
+     -F client_id=<client_id> \
+     -F client_secret=<client_secret> \
+     -F username=user@example.com \
+     -F password=password

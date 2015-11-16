@@ -9,7 +9,7 @@ gem 'protected_attributes'
 #gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.13'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -34,6 +34,13 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+
+gem 'doorkeeper'
+gem 'grape'
+gem 'wine_bouncer', '~> 0.5.0'
+
+gem 'active_model_serializers'#, '~> 0.8.0'
+gem 'grape-active_model_serializers'#, '< 1.2.1'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
