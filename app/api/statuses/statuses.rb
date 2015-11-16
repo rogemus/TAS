@@ -18,7 +18,7 @@ module Statuses
 
 			desc 'Return a stauses feed'
 			# oauth2
-			get :statuses do
+			get :statuses, root: false do
 				Status.all
 				# User.all
 			end
@@ -26,11 +26,11 @@ module Statuses
 			desc 'Return amount of statuses'
 			# oauth2
 			params do
-				optional :count, type: Integer, default: 2, desc: 'How many statuses' # Max 200
+				optional :count, type: Integer, default: 20, desc: 'How many statuses' # Max 200
 				optional :min_id, type: Integer, desc: 'Status ID' #can be null
 				optional :max_id, type: Integer, desc: 'Status ID' #can be null
 			end
-			get :feed do
+			get :feed, root: false do
 				if params[:min_id] && params[:max_id]
 					Status.where("id > ? AND id < ?", params[:min_id],params[:max_id]).last(params[:count])
 				elsif params[:max_id]

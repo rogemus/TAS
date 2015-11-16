@@ -8,7 +8,7 @@ module Users
 
 			desc 'Get infromation about resource owner'
 			oauth2
-			get :me, serializer: UserShortSerializer do
+			get :me, root: false, serializer: UserShortSerializer do
 				resource_owner
 			end
 
