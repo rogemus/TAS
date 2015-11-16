@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :profile_name, :full_name, :id
   # attr_accessible :title, :body
+<<<<<<< HEAD
   has_many :statuses
 
   validates :first_name, presence: true
@@ -23,4 +24,10 @@ class User < ActiveRecord::Base
   def full_name
     first_name + " " + last_name
   end
+||||||| merged common ancestors
+=======
+
+
+    has_many :statuses
+>>>>>>> origin/master
 end

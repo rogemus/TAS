@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 #Install Device // Odpowiedzialne za logowanie i rejestracje
 gem 'devise'
+gem 'simple_form'
 
 gem 'protected_attributes'
 #lokalizacja rubiego 

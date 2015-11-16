@@ -1,4 +1,5 @@
 class Status < ActiveRecord::Base
+<<<<<<< HEAD
     attr_accessible :content, :user_id
     belongs_to :user
 
@@ -7,4 +8,10 @@ class Status < ActiveRecord::Base
                       
     validates :user_id, presence: true
 
+||||||| merged common ancestors
+    attr_accessible :content
+=======
+    attr_accessible :content, :user_id
+    belongs_to :user
+>>>>>>> origin/master
 end
