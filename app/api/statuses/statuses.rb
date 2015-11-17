@@ -32,13 +32,13 @@ module Statuses
 			end
 			get :feed, root: false do
 				if params[:min_id] && params[:max_id]
-					Status.where("id > ? AND id < ?", params[:min_id],params[:max_id]).last(params[:count])
+					Status.where("id > ? AND id < ?", params[:min_id],params[:max_id]).last(params[:count]).reverse
 				elsif params[:max_id]
-					Status.where("id < ?", params[:max_id]).last(params[:count])
+					Status.where("id < ?", params[:max_id]).last(params[:count]).reverse
 				elsif params[:min_id]
-					Status.where("id > ?", params[:min_id]).last(params[:count])
+					Status.where("id > ?", params[:min_id]).last(params[:count]).reverse
 				else
-					Status.last(params[:count])
+					Status.last(params[:count]).reverse
 				end
 			end
 
