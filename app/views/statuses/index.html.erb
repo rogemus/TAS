@@ -5,23 +5,39 @@
 <!-- Pętls odpowiedzialna za wyswietlanie statusów -->
 <% @statuses.each do | status | %>
 
-<div class="status">
-  <div class="row">
-    <div class="col-md-1"><%= image_tag status.user.gravatar_url %></div>
-    <div class="col-md-7">
-      <strong><%= status.user.first_name %>
-        <%= status.user.last_name %></strong>
-      <!--Kod opowiedzialny za pobieranie nazwiska z bazy danych kiedys tu bedzie-->
-      <p><%= status.content %></p>
-      <div class="meta">
-        <%= link_to time_ago_in_words(status.created_at) + " temu", status %>
-        <!-- Ustawić potem na jezyk PL-->
-        <span class="admin">
-          |
-          <%= link_to "Edytuj", edit_status_path(status) %>
-          |
-          <%= link_to "Usuń", status, method: :delete, data: { confirm: "Jesteś pewny że chcesz to usunać"} %>
-        </span>
+<div class="container">
+  <div class="status">
+    <div class="row">
+      <div class="col-md-1 img">
+
+          <%= image_tag status.user.gravatar_url %>
+
+      </div>
+      <div class="col-md-7">
+        <div class="row">
+          <div class="col-md-12">
+            <strong><%= status.user.full_name %></strong>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="meta">
+              <%= link_to time_ago_in_words(status.created_at) + " temu", status %>
+              <!-- Ustawić potem na jezyk PL-->
+              <span class="admin">
+                |
+                <%= link_to "Edytuj", edit_status_path(status) %>
+                |
+                <%= link_to "Usuń", status, method: :delete, data: { confirm: "Jesteś pewny że chcesz to usunać"} %>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 content">
+            <p><%= status.content %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

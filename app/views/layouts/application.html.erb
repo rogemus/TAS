@@ -20,11 +20,7 @@
         </div>
       </div>
       <div class="col-md-8">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+        &nbsp;
       </div>
       <div class="col-md-2">
         <% if user_signed_in? %>
@@ -37,6 +33,11 @@
             <div class="col-md-3"><%= link_to icon('cog'), edit_user_registration_path %></div>
             <div class="col-md-3"><%= link_to icon('sign-out'), logout_path %></div>
           </div>
+        </div>
+        <% else %>
+        <div class="row option logout">
+          <div class="col-md-3"><%= link_to icon('user-plus'), register_path %></div>
+          <div class="col-md-3"><%= link_to icon('sign-in '), login_path %></div>
         </div>
         <% end %>
       </div>

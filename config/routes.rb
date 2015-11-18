@@ -12,11 +12,24 @@ TAS::Application.routes.draw do
     get 'register', to: 'devise/registrations#new', as: :register
     get 'login', to: 'devise/sessions#new', as: :login
     get 'logout', to: 'devise/sessions#destroy', as: :logout
+    #root to: "devise/sessions#new"
+
+    authenticated :user do
+      root 'statuses#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root to: 'devise/sessions#new', as: :unauthenticated_root
+    end
+
+
   end
 
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
   root to: 'statuses#index'
+
+  #root to: 'devise/sessions#new'
 
   get '/:id', to: 'profiles#show'
 
