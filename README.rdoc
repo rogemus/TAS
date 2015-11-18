@@ -2,3 +2,19 @@ ToDo
 
 Android client app O.K.O.N Client
 https://github.com/TheMickeyMike/O.K.O.N-Client
+
+#Zmiany
+
+###Nowe adresy
+
+ localhost/login - do zalogowania
+ localhost/logout - do wylogowania
+ localhost/register - do rejestracji
+ localhost/feed - wszystkie posty
+
+ localhost/nick_uzytkownika - link do wszystkich postow jednego uzytkownika
+ obsluga strony 404 po wpisaniu zlego loginu uzytkownika w adres
+
+####Zdjecia profilowe na podstawie gravatar.com
+
+####Troche zmieniony UI, ale nie znacznie, potem zrobie ładniejszy

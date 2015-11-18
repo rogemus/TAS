@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'simple_form'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'protected_attributes'
-#lokalizacja rubiego 
+#lokalizacja rubiego
 #gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

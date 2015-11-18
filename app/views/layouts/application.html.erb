@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>TAS</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+      <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<header>
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			 <a class="brand">OkonBook</a>
-			 <ul class="nav">
-			 	<li><%= link_to "Wszystkie wpisy", statuses_path %></li>
-			 </ul>
-		</div>
-	</div>
-</div>
-	
-<!-- Alerty od devise -->
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-<!-- end -->
-	
-</header>
-<!--HEADER-->
+  <header>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a href="" class="brand">OkonBook</a>
+          <ul class="nav">
+            <li>
+              <%= link_to "Wszystkie wpisy", feed_path %>
+            </li>
+          </ul>
+          <ul class="nav pull-right">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to current_user.full_name, edit_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "Wyloguj", logout_path %>
+              </li>
+              <% else %>
+                <li>
+                  <%= link_to "Zarejestruj", register_path %>
+                </li>
+                <li>
+                  <%= link_to "Zaloguj", login_path %>
+                </li>
+                <% end %>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--HEADER-->
+  <div class="container">
+    <% flash.each do | type, message | %>
+    <div class="alert <%= flash_class type %>">
+       <button class="close" data-dismiss="alert">x</button>
+       <%= message %>
+    </div>
+
+    <% end %>
 
 
-<div class="container">
-	
+  </div>
 
 
 
-<%= yield %>
+  <div class="container">
 
 
 
 
-<footer></footer>
-<!--FOOTER -->
-</div>
+    <%= yield %>
+
+
+
+
+      <footer></footer>
+      <!--FOOTER -->
+  </div>
 </body>
+
 </html>
