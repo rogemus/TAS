@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#lokalizacja rubiego
+#gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
+
 #Install Device // Odpowiedzialne za logowanie i rejestracje
 gem 'devise'
 gem 'simple_form'
@@ -8,9 +11,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'protected_attributes'
 
 gem 'font-awesome-sass', '~> 4.4.0'
-
-#lokalizacja rubiego
-#gem 'rails-i18n', '~> 4.0.0' # For 4.0.x
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.13'
