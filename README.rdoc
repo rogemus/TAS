@@ -1,11 +1,6 @@
-ToDo
+# Zmiany
 
-Android client app O.K.O.N Client
-https://github.com/TheMickeyMike/O.K.O.N-Client
-
-#Zmiany
-
-###Nowe adresy
+### Nowe adresy
 
  localhost/login - do zalogowania
  localhost/logout - do wylogowania
@@ -15,6 +10,12 @@ https://github.com/TheMickeyMike/O.K.O.N-Client
  localhost/nick_uzytkownika - link do wszystkich postow jednego uzytkownika
  obsluga strony 404 po wpisaniu zlego loginu uzytkownika w adres
 
-####Zdjecia profilowe na podstawie gravatar.com
+#### Zdjecia profilowe na podstawie gravatar.com
 
-####Troche zmieniony UI, ale nie znacznie, potem zrobie ładniejszy
+#### Troche zmieniony UI, ale nie znacznie, potem zrobie ładniejszy
+
+
+## ToDo
+
+Android client app O.K.O.N Client
+https://github.com/TheMickeyMike/O.K.O.N-Client
