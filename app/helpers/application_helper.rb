@@ -7,7 +7,7 @@ module ApplicationHelper
     when :notice
       "alert-success"
     else
-      "test"
+      "alert-success"
     end
   end
 end
