@@ -6,6 +6,11 @@ module Statuses
 		formatter :json, Grape::Formatter::ActiveModelSerializers
 		use ::WineBouncer::OAuth2
 
+		default_error_status 400
+
+		rescue_from WineBouncer::Errors::OAuthUnauthorizedError do |e|
+			error!({ error: e.message }, 401)
+		end
 
 		helpers do
 			# Find the user that owns the access token

@@ -4,6 +4,13 @@ module Users
 		format :json
 		formatter :json, Grape::Formatter::ActiveModelSerializers
 		use ::WineBouncer::OAuth2
+
+		default_error_status 400
+
+		rescue_from WineBouncer::Errors::OAuthUnauthorizedError do |e|
+			error!({ error: e.message }, 401)
+		end
+		
 		resource :users do
 
 			desc 'Get infromation about resource owner'
@@ -39,7 +46,7 @@ module Users
 
 				end
 				get ':id' do
-					Status.where("user_id = ? AND created_at >= ?", params[:id], params[:min_timestamp])
+					Status.where("user_id = ?", params[:id])
 				end
 			end
 
