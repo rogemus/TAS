@@ -45,8 +45,16 @@ module Users
 					optional :max_timestamp, type: DateTime, desc: 'Max timestamp ID' #can be null
 
 				end
-				get ':id' do
-					Status.where("user_id = ?", params[:id])
+				get ':id', root: false do
+					if params[:min_id] && params[:max_id]
+						Status.where("user_id = ? AND id > ? AND id < ?",params[:id], params[:min_id],params[:max_id]).last(params[:count]).reverse
+					elsif params[:max_id]
+						Status.where("user_id = ? AND id < ?",params[:id], params[:max_id]).last(params[:count]).reverse
+					elsif params[:min_id]
+						Status.where("user_id = ? AND id > ?",params[:id], params[:min_id]).last(params[:count]).reverse
+					else
+						Status.where("user_id = ?", params[:id]).last(params[:count]).reverse
+					end
 				end
 			end
 

@@ -29,7 +29,7 @@ module Statuses
 			end
 
 			desc 'Return amount of statuses'
-			# oauth2
+			oauth2
 			params do
 				optional :count, type: Integer, default: 20, desc: 'How many statuses' # Max 200
 				optional :min_id, type: Integer, desc: 'Status ID' #can be null
