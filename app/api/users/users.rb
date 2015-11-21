@@ -10,6 +10,10 @@ module Users
 		rescue_from WineBouncer::Errors::OAuthUnauthorizedError do |e|
 			error!({ error: e.message }, 401)
 		end
+
+		 rescue_from ActiveRecord::RecordNotFound do |e|
+		 	error!({ error: e.message }, 404)
+		 end
 		
 		resource :users do
 
@@ -31,6 +35,26 @@ module Users
 			post :sign_up do
 				User.create!(params)
 			end
+
+
+			desc 'Get user by username'
+			params do
+				requires :username, type: String, desc: 'Username'
+			end
+			get ':username', proot: false, serializer: UserShortSerializer do
+				User.find_by(profile_name: params[:username])
+			end
+
+			resource :id do
+				desc 'Get user by id'
+				params do
+					requires :id, type: Integer, desc: 'user id'
+				end
+				get ':id', root: false, serializer: UserShortSerializer do
+					User.find(params[:id])
+				end
+			end
+
 
 
 			resource :recent do
