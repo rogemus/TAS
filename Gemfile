@@ -6,6 +6,12 @@ source 'https://rubygems.org'
 #Install Device // Odpowiedzialne za logowanie i rejestracje
 gem 'devise'
 gem 'simple_form'
+gem 'state_machine'
+
+group :test do
+	gem 'shoulda'
+	gem 'factory_girl_rails'
+end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'protected_attributes'
