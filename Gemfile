@@ -7,6 +7,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'simple_form'
 gem 'state_machine'
+gem 'paperclip'
 
 group :test do
 	gem 'shoulda'
