@@ -3,7 +3,7 @@
 
 <head>
   <title>TAS</title>
- 
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
 
@@ -48,7 +48,7 @@
                   <div class="col-md-3">
                     <%= link_to icon('sign-out'), logout_path %>
                   </div>
-                </div> 
+                </div>
               </div>
               <% else %>
                 <div class="row option logout">
