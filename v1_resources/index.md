@@ -15,6 +15,7 @@ Na liście powinna pojawić się nowo utworzona aplikacja. Klikamy w nią i nasz
 
 ##Authentication
 We use an OAuth 2.0, an authentication protocol.
+Endpointy systemu oauth, warto zaglądnąć. [Source](https://github.com/doorkeeper-gem/doorkeeper/wiki/api-endpoint-descriptions-and-examples)
 
 ###Getting access tokens
 
