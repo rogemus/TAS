@@ -4,7 +4,7 @@
 TODO
 
 ##Register Your App
-Wchodzimy na stronę: `http://0.0.0.0:3000/oauth/`applications'. Klikamy **New Application**.
+Wchodzimy na stronę: `http://0.0.0.0:3000/oauth/applications`. Klikamy **New Application**.
 ```
 Name: NzwaAplikacji
 Redirect URI: urn:ietf:wg:oauth:2.0:oob
