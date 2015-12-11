@@ -53,7 +53,7 @@ Przykład: `http://0.0.0.0:3000/api/v1/statuses/statuses`
 | GET /statuses/statuses | Wszystkie statusy|
 | GET /statuses/feed | Statusy (OAUTH)|
 | GET /statuses/:id| Statusy dla danego użytkownika|
-| [POST /statuses/new](/statuses.md) | Nowy status|
+| [POST /statuses/new](/v1_resources/statuses.md) | Nowy status|
 | PUT /statuses/:id | Edytuj status o danym id |
 
 ### [Users](/)

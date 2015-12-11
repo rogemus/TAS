@@ -1,5 +1,5 @@
 ##API
-[Dokumentacja](/api.md)
+[Dokumentacja](/v1_resources/index.md)
 
 Podstawowe komendy:
  - rake routes - wypisuje wszystkie mozliwe "sciezki" w aplikacji
