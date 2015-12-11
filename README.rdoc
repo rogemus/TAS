@@ -1,3 +1,5 @@
+## [API](/api.md)
+
 Podstawowe komendy:
  - rake routes - wypisuje wszystkie mozliwe "sciezki" w aplikacji
  - rake db:migrate - migruje baze danych
