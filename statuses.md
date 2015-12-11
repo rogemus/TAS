@@ -11,7 +11,7 @@ Nowy status
 
 ```json
 curl -H "Content-Type: application/json" -H 'Authorization: Bearer <access_token>' \
--d '{"content":"UALALALALALALALA nowy status heheh"}' -X POST http://0.0.0.0:3000/api/v1/statuses/new
+-d '{"content":"To jest moj nowy status"}' -X POST http://0.0.0.0:3000/api/v1/statuses/new
 ```
 ###Example Response
 ```json
