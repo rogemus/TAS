@@ -15,7 +15,13 @@
                     <div class="align-right">
                         <div class="row full_name">
                             <div class="col-md-12">
-                                <a href="/">Kacper Rogowski</a>
+
+
+                                {if isset($smarty.session.token)}
+                                    {* $user_full_name *}
+                                {/if}
+
+
                             </div>
                         </div>
                         <div class="row option">

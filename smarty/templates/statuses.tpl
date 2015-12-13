@@ -1,6 +1,7 @@
 {include file='header.tpl'}
 
 
+statusy
 
 
 

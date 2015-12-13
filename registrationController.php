@@ -10,6 +10,7 @@ require_once 'REST.php';
 
 session_start();
 
+//Rejestracja
 $rest = new REST();
 $rest->AddOptions(array(
     'Content-Type: application/json'
