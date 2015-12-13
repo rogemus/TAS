@@ -8,10 +8,8 @@
 
 
 require_once 'REST.php';
+require_once 'Smarty.php';
 
-$content = function() {
-    require_once 'registrationForm.html';
-};
+$smarty->display('statuses.tpl');
 
-require_once 'templateIndex.php';
 

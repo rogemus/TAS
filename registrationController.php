@@ -23,4 +23,4 @@ $registerUser = $rest->POST( 'api/v1/users/sign_up', array(
     'password_confirmation' => $_POST['password_confirmation']
 ));
 
-header('Location: loginPage.php');
+header('Location: index.php');

@@ -1,11 +1,16 @@
+{include file='header.tpl'}
+
 <form action="loginController.php" method="post">
 
     <label for="email">Email</label>
-    <input type="email" name="email">
+
+     <input type="email" name="email">
 
     <label for="password">Password</label>
     <input type="password" name="password">
 
     <input type="submit" value="Login">
-    
+
 </form>
+
+{include file='footer.tpl'}

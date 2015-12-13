@@ -7,44 +7,17 @@
  */
 
 
+
 require_once 'REST.php';
+require_once 'Smarty.php';
 
 session_start();
 
 if ( !isset($_SESSION['token']) ) {
-    header('Location: loginPage.php');
+    $smarty->display('login.tpl');
 } else {
-
-
-    $content = function(){
-        $rest = new REST();
-        $result = null;
-
-        $rest->AddOptions(array(
-            'Content-Type: application/json',
-            'Authorization: Bearer '.$_SESSION['token']
-        ));
-        $result = $rest->GET('api/v1/statuses/feed');
-
-//print_r($result);
-
-//wypisywanie wszytskich postów po autoryzacji
-        foreach ( $result as $key => $var ){
-            echo $result[$key]->user->full_name;
-            ?>
-            <br>
-            <?php
-            echo $result[$key]->content;
-            ?>
-            <br>
-            <?php
-        }
-    };
-
+    $smarty->display('index.tpl');
 }
-
-
-require_once 'templateIndex.php';
 
 
 

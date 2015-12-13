@@ -25,6 +25,6 @@ $token = $rest->POST( 'oauth/token', array(
     'username' => $_POST['email']
 ));
 
-( isset($token->access_token) ) ? $_SESSION['token'] = $token->access_token : die(var_dump($token));
+( isset($token->access_token) ) ? $_SESSION['token'] = $token->access_token : die();
 
 header('Location: index.php');
