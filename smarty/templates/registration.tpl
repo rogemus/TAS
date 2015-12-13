@@ -1,3 +1,6 @@
+{include file='header.tpl'}
+{include file='middle.tpl'}
+
 <form action="registrationController.php" method="post">
 
     <label for="first_name">First Name</label>
@@ -21,3 +24,4 @@
     <input type="submit" value="Register">
 
 </form>
+{include file='footer.tpl'}

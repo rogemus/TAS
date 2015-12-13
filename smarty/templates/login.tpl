@@ -1,5 +1,5 @@
 {include file='header.tpl'}
-
+{include file='middle.tpl'}
 <form action="loginController.php" method="post">
 
     <label for="email">Email</label>
