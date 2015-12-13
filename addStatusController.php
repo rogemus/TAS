@@ -14,7 +14,7 @@ $rest->AddOptions(array(
    'Content-Type: application/json',
     'Authorization: Bearer '.$_SESSION['token']
 ));
-print_r($rest->POST('api/v1/statuses/new', array(
+$rest->POST('api/v1/statuses/new', array(
     'content' => $_POST['content'])
-));
-
+);
+header('Location: statuses.php');
