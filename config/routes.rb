@@ -5,6 +5,7 @@ TAS::Application.routes.draw do
 
   mount Statuses::StatusesController => '/api'
   mount Users::UsersController => '/api'
+  mount Friendships::FriendshipsController => '/api'
 
 
   as :user do
