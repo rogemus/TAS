@@ -9,6 +9,15 @@ module ApplicationHelper
       end
   end
 
+  def status_image_link(status)
+      if status.image && status.image.img?
+    content_tag(:span, "img", class: "label label-info") +
+    link_to(status.image.img_file_name, status.image.img.url)
+
+
+      end
+  end
+
 
   def flash_class(type)
     case type
