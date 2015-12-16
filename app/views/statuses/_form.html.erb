@@ -27,6 +27,21 @@
   <%= document_fields.input :attachment, as: :file %>
 <% end %>
 
+<%= f.fields_for :image do |image_fields|%>
+  <% if image_fields.object.img? %>
+  <div class="control-group">
+      <label class="control-label"> Current img</label>
+      <div class="controls">
+        <%= link_to image_fields.object.img_file_name, image_fields.object.img.url %>
+      </div>
+    </div>
+
+    <%= image_fields.input :remove_img, as: :boolean, label: "Remove img?" %>
+  <% end %>
+
+  <%= image_fields.input :img, as: :file %>
+<% end %>
+
   <div class="actions">
     <%= f.button :submit %>
   </div>

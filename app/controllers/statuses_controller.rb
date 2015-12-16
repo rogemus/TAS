@@ -28,6 +28,7 @@ class StatusesController < ApplicationController
   def new
     @status = Status.new
     @status.build_document
+    @status.build_image
 
     respond_to do |format|
       format.html # new.html.erb
