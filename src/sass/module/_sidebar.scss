@@ -1,0 +1,110 @@
+#menu {
+  margin-left: -200px;
+  /* "#menu" width */
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  /* so the menu or its navicon stays above all content */
+  background: $dark-blue;
+  overflow-y: auto;
+  a {
+    color: $white;
+    border: none;
+    padding: 0.6em 0 0.6em 0.6em;
+  }
+  .pure-menu {
+    border: none;
+    background: transparent;
+    .pure-menu-heading {
+      padding: 18px 0;
+      background: $blue;
+      color: $white;
+      text-transform: none;
+      text-align: center;
+    }
+    ul {
+      border: none;
+      background: $black;
+      //border-top: 1px solid $lighter-dark-blue;
+      padding: 18px 0;
+      li {
+        padding: 3px 0;
+        a {
+          @include font-size($font-minor);
+          font-family: $open-sans;
+          transition: box-shadow 0.3s;
+          span {
+            transition: color 0.3s;
+            color: $lighter-dark-blue;
+            padding-right: 15px;
+          }
+          padding-left: 15px;
+        }
+      }
+    }
+    .menu-item-divided {
+      border-top: 1px solid $lighter-dark-blue;
+    }
+    li a {
+      &:hover,
+      &:focus {
+        //color: $blue;
+        padding-left: 12px;
+        border-left: 3px solid $blue;
+        color: $white;
+        box-shadow: 0 2px 5px 0 black;
+        background: $dark-blue;
+        & span {
+          color: $blue;
+        }
+      }
+    }
+  }
+  .add-post {
+    h2 {
+      @include font-size($font-minor);
+      text-align: center;
+      color: $lighter-dark-blue;
+      margin: 15px 0;
+    }
+    .add-post-button-container {
+      text-align: center;
+      padding: 15px 0;
+      .add-post-button {
+        font-family: $open-sans;
+        background: $blue;
+        box-shadow: $button-shadow;
+        text-align: center;
+        padding: 12px 25px;
+        text-decoration: none;
+        border-radius: 5px;
+        &:hover{
+          background: lighten($blue, 5);
+        }
+      }
+    }
+  }
+}
+.header,
+.content {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+#layout {
+  padding-left: 200px;
+  left: 0;
+}
+#menu {
+  left: 200px;
+}
+.menu-link {
+  position: fixed;
+  left: 200px;
+  display: none;
+}
+#layout.active .menu-link {
+  left: 200px;
+}
