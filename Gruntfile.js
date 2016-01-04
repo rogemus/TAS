@@ -90,7 +90,8 @@ module.exports = function(grunt) {
 
     watch: {
       files: [
-        "src/sass/**/*.scss"
+        "src/sass/**/*.scss",
+        "src/jade/**/*.jade"
       ],
       tasks: ['dev']
     },
@@ -133,6 +134,19 @@ module.exports = function(grunt) {
           ]
         }
       }
+    },
+    jade: {
+      dev: {
+        options: {
+          pretty: true,
+          data: {
+            debug: true
+          }
+        },
+        files: {
+          "src/index.html": ["src/jade/index.jade"]
+        }
+      }
     }
 
   });
@@ -152,6 +166,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-bower-concat');
+  grunt.loadNpmTasks('grunt-contrib-jade');
+
 
   grunt.task.registerTask('dev', ['clean', 'jshint', 'sass', 'autoprefixer', 'bower_concat']);
   //grunt.task.registerTask('dev', ['jshint', 'sass', 'autoprefixer']);
