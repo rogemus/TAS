@@ -9,9 +9,11 @@
 @import "module/_footer.scss";
 @import "module/_header.scss";
 @import "module/_middle.scss";
-@import "module/_single-post.scss";
 @import "module/_sidebar.scss";
 @import "module/_form.scss";
+@import "module/_single-post.scss";
+//PAGE
+@import "page/_profile-page.scss";
 
 main {
     @extend %clearfix;

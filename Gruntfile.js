@@ -125,7 +125,8 @@ module.exports = function(grunt) {
         dest: 'src/js/_bower.js',
         cssDest: 'src/css/_bower.css',
         mainFiles: {
-          'font-awesome': ['css/font-awesome.min.css']
+          'font-awesome': ['css/font-awesome.min.css'],
+          'masonry': ['dist/masonry.pkgd.min.js']
         },
         dev: {
           include: [
@@ -148,7 +149,8 @@ module.exports = function(grunt) {
           "src/index.html": ["src/jade/index.jade"],
           "src/login.html": ["src/jade/login.jade"],
           "src/registration.html": ["src/jade/registration.jade"],
-          "src/single-post.html": ["src/jade/single-post.jade"]
+          "src/single-post.html": ["src/jade/single-post.jade"],
+          "src/profile-page.html": ["src/jade/profile-page.jade"]
         }
       }
     }

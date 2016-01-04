@@ -3,11 +3,6 @@ html, body {
   padding: 0px;
 }
 
-.pure-img-responsive {
-  max-width: 100%;
-  height: auto;
-}
-
 main:before, main:after {
   content: " ";
   display: table;
@@ -33,7 +28,7 @@ main {
   margin: 0 auto !important;
   padding: 0;
   position: relative;
-  width: 1000px;
+  width: 960px;
 }
 
 header.top {
@@ -75,75 +70,6 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 
 #main {
   padding-top: 100px;
-}
-
-.post-box {
-  width: 300px;
-}
-.post-box.post-wide {
-  width: 900px;
-}
-.post-box.post-wide .thumbnail {
-  display: block;
-  margin: 0 auto;
-  width: 125px;
-  height: 125px;
-}
-.post-box.post-wide .thumbnail img {
-  display: block;
-  border-radius: 20px;
-}
-.post-box .shadow {
-  box-shadow: 2px 2px 14px 0 #E0E0E0;
-  border-top: 1px solid #fff;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #E0E0E0;
-  border-bottom: 1px solid #E0E0E0;
-}
-.post-box article.post {
-  padding: 0px 15px 15px 0;
-}
-.post-box article.post .post-content header.post-header {
-  border-bottom: 1px solid #e0e0e0;
-  padding: 8px 15px;
-}
-.post-box article.post .post-content header.post-header .thumbnail {
-  height: 45px;
-  width: 45px;
-}
-.post-box article.post .post-content header.post-header .thumbnail img {
-  border-radius: 15px;
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  margin: 0 auto;
-}
-.post-box article.post .post-content header.post-header .full_name {
-  padding-top: 4px;
-}
-.post-box article.post .post-content header.post-header .full_name a {
-  font-size: 16px;
-  font-size: 1rem;
-  color: #1784C7;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-.post-box article.post .post-content header.post-header .date a {
-  font-size: 10px;
-  font-size: 0.625rem;
-  padding: 0 10px;
-  color: #3E454C;
-  text-decoration: none;
-}
-.post-box article.post .post-content .post-main {
-  color: #1C1F22;
-  padding: 0;
-  margin: 0;
-}
-.post-box article.post .post-content .post-main p {
-  padding: 15px;
-  line-height: normal;
 }
 
 #menu {
@@ -304,6 +230,110 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   font-family: inherit;
   color: #1C1F22;
   padding: 5px 0;
+}
+
+.shadow {
+  box-shadow: 2px 2px 14px 0 #E0E0E0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.post-box {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 300px;
+}
+.post-box.post-wide {
+  width: 900px;
+}
+.post-box.post-wide .thumbnail {
+  display: block;
+  margin: 0 auto;
+  width: 125px;
+  height: 125px;
+}
+.post-box.post-wide .thumbnail img {
+  display: block;
+  border-radius: 20px;
+}
+.post-box article.post {
+  padding: 0px 15px 15px 0;
+}
+.post-box article.post .post-content header.post-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 8px 15px;
+}
+.post-box article.post .post-content header.post-header .thumbnail {
+  height: 45px;
+  width: 45px;
+}
+.post-box article.post .post-content header.post-header .thumbnail img {
+  border-radius: 15px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+.post-box article.post .post-content header.post-header .full_name {
+  padding-top: 4px;
+}
+.post-box article.post .post-content header.post-header .full_name a {
+  font-size: 16px;
+  font-size: 1rem;
+  color: #1784C7;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-family: inherit;
+}
+.post-box article.post .post-content header.post-header .date a {
+  font-size: 10px;
+  font-size: 0.625rem;
+  padding: 0 10px;
+  color: #3E454C;
+  text-decoration: none;
+  font-family: inherit;
+}
+.post-box article.post .post-content .post-main {
+  color: #1C1F22;
+  padding: 0;
+  margin: 0;
+}
+.post-box article.post .post-content .post-main p {
+  padding: 15px;
+  line-height: normal;
+}
+
+.profile-page {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.profile-page .profile-info {
+  width: 175px;
+}
+.profile-page .profile-info .full_name {
+  font-size: 18px;
+  font-size: 1.125rem;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid gainsboro;
+}
+.profile-page .profile-info .full_name span {
+  color: #1784C7;
+  text-transform: capitalize;
+}
+.profile-page .profile-info .thumbnail {
+  display: block;
+  margin: 0 auto;
+}
+.profile-page .profile-info .profile-user-info {
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 15px;
+  color: #1C1F22;
+}
+.profile-page .post-box {
+  width: 375px;
 }
 
 main {

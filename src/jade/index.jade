@@ -11,10 +11,11 @@ html
           .header
           .grid
 
-          include ./module/single-post.jade
+            each val in [1, 2, 3, 4, 5, 6]
+              include ./module/single-post.jade
 
 
 
-      script(src='js/app/grid.js')
+  script(src='js/app/grid.js')
 
-      include ./module/footer.jade
+  include ./module/footer.jade

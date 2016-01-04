@@ -1,5 +1,15 @@
+.shadow {
+  box-shadow: 2px 2px 14px 0 #E0E0E0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
 .post-box {
+  font-family: $open-sans;
   width: 300px;
+  //float: left;
   &.post-wide {
     width: 900px;
     .thumbnail {
@@ -12,13 +22,6 @@
         border-radius: 20px;
       }
     }
-  }
-  .shadow {
-    box-shadow: 2px 2px 14px 0 #E0E0E0;
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #E0E0E0;
-    border-bottom: 1px solid #E0E0E0;
   }
   article.post {
     padding: 0px 15px 15px 0;
@@ -45,6 +48,7 @@
             padding: 5px 10px;
             text-decoration: none;
             text-transform: capitalize;
+            font-family: inherit;
           }
         }
         .date {
@@ -53,6 +57,7 @@
             padding: 0 10px;
             color: $lighter-dark-blue;
             text-decoration: none;
+            font-family: inherit;
           }
         }
       }

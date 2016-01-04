@@ -1,0 +1,49 @@
+doctype html
+html
+  include ./module/head.jade
+  body    
+    #layout
+      include ./module/sidebar.jade
+      include ./module/top-menu.jade
+
+      #main
+        .wrapper
+          .header
+          .profile-page
+            .pure-g
+              .pure-u-1-5
+                .profile-info
+                  .shadow
+                    .profile-content
+                      .thumbnail.avatar
+                        img.pure-img(src='http://placehold.it/175x175/121212/ff7e66', alt='')
+                      .full_name
+                        span Janusz Janusz
+                      .profile-user-info
+                        p
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem itaque a modi, culpa dolor enim rem! Omnis eveniet illum repudiandae, aperiam fuga provident distinctio eaque consequatur praesentium dignissimos accusantium. Eum.
+                          
+              .pure-u-4-5
+                .grid2
+                  each val in [1, 2, 3, 4, 5, 6]
+                    .post-box.grid-item2
+                      article.post
+                        .shadow
+                          .post-content
+                            header.post-header.pure-g
+                              .pure-u-5-5
+                                .full_name
+                                  a(href='profile-page.html') Kacper
+                                .date
+                                  a(href='single-post.html') 2015-12-12
+                            .post-img
+                              img.pure-img(src='http://placehold.it/900x400/1D7E42/FFFFFF', alt='')
+                            .post-main
+                              p
+                                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio voluptatem eligendi praesentium, dolorum necessitatibus, odit quasi, dignissimos soluta nemo architecto quidem id accusamus iusto saepe tempore! Necessitatibus cumque explicabo,
+                                | repudiandae?
+
+
+
+    script(src='js/app/grid.js')
+    include ./module/footer.jade
