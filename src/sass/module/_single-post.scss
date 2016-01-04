@@ -1,5 +1,18 @@
 .post-box {
   width: 300px;
+  &.post-wide {
+    width: 900px;
+    .thumbnail {
+      display: block;
+      margin: 0 auto;
+      width: 125px;
+      height: 125px;
+      img{
+        display: block;
+        border-radius: 20px;
+      }
+    }
+  }
   .shadow {
     box-shadow: 2px 2px 14px 0 #E0E0E0;
     border-top: 1px solid #fff;
@@ -8,15 +21,18 @@
     border-bottom: 1px solid #E0E0E0;
   }
   article.post {
-    padding: 15px 15px 15px 0;
+    padding: 0px 15px 15px 0;
     .post-content {
       header.post-header {
         border-bottom: 1px solid #e0e0e0;
         padding: 8px 15px;
         .thumbnail {
+          height: 45px;
+          width: 45px;
           img {
-            height: 45px;
-            width: 45px;
+            border-radius: 15px;
+            max-width: 100%;
+            max-height: 100%;
             display: block;
             margin: 0 auto;
           }
@@ -42,14 +58,14 @@
       }
       .post-main {
         color: $black;
-        padding: 0px;
+        padding: 0;
         margin: 0;
-        p{
+        p {
           padding: 15px;
           line-height: normal;
         }
       }
-      .post-img{}
+      .post-img {}
       footer.post-footer {}
     }
   }

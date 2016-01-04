@@ -147,7 +147,8 @@ module.exports = function(grunt) {
         files: {
           "src/index.html": ["src/jade/index.jade"],
           "src/login.html": ["src/jade/login.jade"],
-          "src/registration.html": ["src/jade/registration.jade"]
+          "src/registration.html": ["src/jade/registration.jade"],
+          "src/single-post.html": ["src/jade/single-post.jade"]
         }
       }
     }
