@@ -31,6 +31,7 @@
       //border-top: 1px solid $lighter-dark-blue;
       padding: 18px 0;
       li {
+        height: auto;
         padding: 3px 0;
         a {
           @include font-size($font-minor);

@@ -91,7 +91,8 @@ module.exports = function(grunt) {
     watch: {
       files: [
         "src/sass/**/*.scss",
-        "src/jade/**/*.jade"
+        "src/jade/**/*.jade",
+        "src/jade/*.jade"
       ],
       tasks: ['dev']
     },
@@ -169,7 +170,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
 
 
-  grunt.task.registerTask('dev', ['clean', 'jshint', 'sass', 'autoprefixer', 'bower_concat']);
+  grunt.task.registerTask('dev', ['clean','bower_concat', 'jshint', 'sass', 'autoprefixer','jade']);
   //grunt.task.registerTask('dev', ['jshint', 'sass', 'autoprefixer']);
   grunt.task.registerTask('prod', ['concat', 'uglify', 'cssmin', 'imagemin', 'copy', 'bower_concat']);
 

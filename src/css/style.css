@@ -76,33 +76,34 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 #main {
   padding-top: 100px;
 }
-#main .post-box {
+
+.post-box {
   width: 300px;
 }
-#main .post-box .shadow {
+.post-box .shadow {
   box-shadow: 2px 2px 14px 0 #E0E0E0;
   border-top: 1px solid #fff;
   border-left: 1px solid #fff;
   border-right: 1px solid #E0E0E0;
   border-bottom: 1px solid #E0E0E0;
 }
-#main .post-box article.post {
+.post-box article.post {
   padding: 15px 15px 15px 0;
 }
-#main .post-box article.post .post-content header.post-header {
+.post-box article.post .post-content header.post-header {
   border-bottom: 1px solid #e0e0e0;
   padding: 8px 15px;
 }
-#main .post-box article.post .post-content header.post-header .thumbnail img {
+.post-box article.post .post-content header.post-header .thumbnail img {
   height: 45px;
   width: 45px;
   display: block;
   margin: 0 auto;
 }
-#main .post-box article.post .post-content header.post-header .full_name {
+.post-box article.post .post-content header.post-header .full_name {
   padding-top: 4px;
 }
-#main .post-box article.post .post-content header.post-header .full_name a {
+.post-box article.post .post-content header.post-header .full_name a {
   font-size: 16px;
   font-size: 1rem;
   color: #1784C7;
@@ -110,19 +111,19 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   text-decoration: none;
   text-transform: capitalize;
 }
-#main .post-box article.post .post-content header.post-header .date a {
+.post-box article.post .post-content header.post-header .date a {
   font-size: 10px;
   font-size: 0.625rem;
   padding: 0 10px;
   color: #3E454C;
   text-decoration: none;
 }
-#main .post-box article.post .post-content .post-main {
+.post-box article.post .post-content .post-main {
   color: #1C1F22;
   padding: 0px;
   margin: 0;
 }
-#main .post-box article.post .post-content .post-main p {
+.post-box article.post .post-content .post-main p {
   padding: 15px;
   line-height: normal;
 }
@@ -162,6 +163,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   padding: 18px 0;
 }
 #menu .pure-menu ul li {
+  height: auto;
   padding: 3px 0;
 }
 #menu .pure-menu ul li a {

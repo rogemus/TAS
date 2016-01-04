@@ -1,18 +1,19 @@
-include ./module/header.jade    
+html
+  include ./module/head.jade
+  body    
+    #layout
+      include ./module/sidebar.jade
+      include ./module/top-menu.jade
 
-include ./module/sidebar.jade
+      #main
+        .wrapper
+          .header
+          .grid
 
-include ./module/top-menu.jade
-
-#main
-  .wrapper
-    .header
-    .grid
-      
-      include ./module/single-post.jade
+          include ./module/single-post.jade
 
 
 
-    script(src='js/app/grid.js')
+      script(src='js/app/grid.js')
 
-include ./module/footer.jade
+      include ./module/footer.jade
