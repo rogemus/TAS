@@ -1,0 +1,25 @@
+{
+  "name": "okonbook-client",
+  "description": "klient do okonbooka",
+  "main": "index.html",
+  "authors": [
+    "Kacper Rogowski"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rogemus/TAS-Client-Static",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#~4.5.0",
+    "masonry": "~3.3.2",
+    "jquery": "~2.1.4",
+    "pure": "~0.6.0"
+  }
+}

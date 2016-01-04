@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
     jshint: {
       dev: {
-        src: ["src/js/**/*.js", "!src/js/scripts/*.js"],
+        src: ["src/js/**/*.js", "!src/js/scripts/*.js", "!src/js/_bower.js"],
       }
     },
 
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       prod: {
         files: {
-          "build/js/scripts.js": "src/js/**/*.js"
+          "build/js/scripts.js": ["src/js/**/*.js", "!src/js/_bower.js"]
         }
       }
     },
@@ -113,9 +113,25 @@ module.exports = function(grunt) {
     copy: {
       files: {
         cwd: 'src/',
-        src: '*.html',
+        src: ['*.html', 'css/_bower.css', 'js/_bower.js', 'fonts/*'],
         dest: 'build',
         expand: true
+      }
+    },
+    bower_concat: {
+      all: {
+        dest: 'src/js/_bower.js',
+        cssDest: 'src/css/_bower.css',
+        mainFiles: {
+          'font-awesome': ['css/font-awesome.min.css']
+        },
+        dev: {
+          include: [
+            'font-awesome',
+            'pure',
+            'masonry'
+          ]
+        }
       }
     }
 
@@ -135,10 +151,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-bower-concat');
 
-  grunt.task.registerTask('dev', ['clean', 'jshint', 'sass', 'autoprefixer']);
+  grunt.task.registerTask('dev', ['clean', 'jshint', 'sass', 'autoprefixer', 'bower_concat']);
   //grunt.task.registerTask('dev', ['jshint', 'sass', 'autoprefixer']);
-  grunt.task.registerTask('prod', ['concat', 'uglify', 'cssmin', 'imagemin', 'copy']);
+  grunt.task.registerTask('prod', ['concat', 'uglify', 'cssmin', 'imagemin', 'copy', 'bower_concat']);
 
   grunt.task.registerTask('build', ['dev', 'prod']);
   grunt.task.registerTask('default', ['browserSync', 'watch']);
