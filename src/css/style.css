@@ -242,6 +242,50 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   left: 200px;
 }
 
+.form-box {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 300px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 2px 2px 14px 0 #E0E0E0;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+}
+.form-box header.logo {
+  text-align: center;
+  background: #1784C7;
+}
+.form-box header.logo h2 {
+  font-family: inherit;
+  font-weight: normal;
+  color: #F5F5F5;
+  margin: 0;
+  padding: 20px 0;
+}
+.form-box .content {
+  padding: 15px;
+}
+.form-box .content .pure-button {
+  font-family: inherit;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2) inset;
+}
+.form-box .content input[type="text"],
+.form-box .content input[type="email"],
+.form-box .content input[type="password"] {
+  font-family: inherit;
+  width: 100%;
+}
+.form-box .content label {
+  font-family: inherit;
+  color: #1C1F22;
+  padding: 5px 0;
+}
+
 main {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }

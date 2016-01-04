@@ -94,7 +94,7 @@ module.exports = function(grunt) {
         "src/jade/**/*.jade",
         "src/jade/*.jade"
       ],
-      tasks: ['dev']
+      tasks: ['dev', 'jade']
     },
 
     browserSync: {
@@ -145,7 +145,9 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          "src/index.html": ["src/jade/index.jade"]
+          "src/index.html": ["src/jade/index.jade"],
+          "src/login.html": ["src/jade/login.jade"],
+          "src/registration.html": ["src/jade/registration.jade"]
         }
       }
     }
