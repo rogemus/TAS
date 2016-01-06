@@ -86,3 +86,5 @@
 
 
 
+    <script src="assets/js/scripts.js"></script>
+    {include file='module/footer.tpl'}
