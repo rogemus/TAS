@@ -1,5 +1,4 @@
-{include file='header.tpl'}
-{include file='middle.tpl'}
+{include file='module/header.tpl'}
 <div id="main">
     <div class="wrapper">
         <div class="header"></div>
@@ -36,11 +35,11 @@
                             <label for="password_confirmation">Password Confirmation</label>
                             <input id="password_confirmation" type="password" placeholder="Password Confirmation">
                         </p>
-                        <input type="submit" value="Sing in">
+                        <input type="submit" class="pure-button pure-button-primary" value="Sign in">
                     </fieldset>
                 </form>
             </div>
         </div>
     </div>
 </div>
-{include file='footer.tpl'}
+{include file='module/footer.tpl'}
