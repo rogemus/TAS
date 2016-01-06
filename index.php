@@ -11,7 +11,8 @@
 session_start();
 require_once 'actions/REST.php';
 require_once 'actions/Smarty.php';
-//require_once 'infoController.php';
+require_once 'actions/infoController.php';
+require_once 'actions/statusesController.php';
 
 if ( !isset($_SESSION['token']) ) {
     $smarty->display('login.tpl');
