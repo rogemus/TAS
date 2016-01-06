@@ -24,6 +24,6 @@ if (isset($_SESSION['token'])) {
     $x = json_encode($result);
     $smarty->assign('statuses', $x);
 } else {
-    //$smarty->display('index.tpl');
+    //w przeciwnym wypadku
 }
 
