@@ -1,9 +1,9 @@
-{$single_status_full_name}
 {include file='module/header.tpl'}
+{if isset($smarty.session.token)}
 <div id="layout">
     {include file='module/sidebar.tpl'}
     {include file='module/top-menu.tpl'}
-
+    {/if}
 
     <div id="main">
         <div class="wrapper">
@@ -31,7 +31,7 @@
                                     </header>
                                     <div class="post-img">
                                         <img src="http://placehold.it/900x400/1D7E42/FFFFFF" alt=""
-                                                               class="pure-img">
+                                             class="pure-img">
                                     </div>
                                     <div class="post-main">
                                         <p>
@@ -47,5 +47,7 @@
 
         </div>
     </div>
+{if isset($smarty.session.token)}
 </div>
+{/if}
 {include file='module/footer.tpl'}
