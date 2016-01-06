@@ -18,7 +18,6 @@ $rest->AddOptions(array(
 
 
 if( empty($_POST) ) {
-    return $error = "chuj, dupa, kamieni kupa";
     $smarty->display('registration.tpl');
 } else {
     $registerUser = $rest->POST( 'api/v1/users/sign_up', array(
@@ -29,5 +28,6 @@ if( empty($_POST) ) {
         'password' => $_POST['password'],
         'password_confirmation' => $_POST['password_confirmation']
     ));
-    $smarty->display('login.tpl');
 }
+
+header('Location: ../login.php');

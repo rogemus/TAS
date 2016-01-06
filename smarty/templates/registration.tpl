@@ -8,7 +8,7 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" name="registration_form" action="registrationController.php"
+                <form class="pure-form pure-form-stacked" name="registration_form" action="actions/registrationController.php"
                       method="post">
                     <fieldset>
                         <p>
@@ -29,11 +29,11 @@
                         </p>
                         <p>
                             <label for="password">Password</label>
-                            <input id="password" type="password" placeholder="Password">
+                            <input id="password" name="password" type="password" placeholder="Password">
                         </p>
                         <p>
                             <label for="password_confirmation">Password Confirmation</label>
-                            <input id="password_confirmation" type="password" placeholder="Password Confirmation">
+                            <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Password Confirmation">
                         </p>
                         <input type="submit" class="pure-button pure-button-primary" value="Sign in">
                     </fieldset>
