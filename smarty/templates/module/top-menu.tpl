@@ -1,35 +1,12 @@
-<header>
-    <div class="container">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="col-md-2">
-                    <div class="navbar-header">
-
-                        <a class="navbar-brand" href="index.php">OkonBook</a>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    &nbsp;
-                </div>
-                <div class="col-md-2">
-                    <div class="align-right">
-                        <div class="row full_name">
-                            <div class="col-md-12">
-                                {if isset($smarty.session.token)}
-                                    {$user_full_name}
-                                {/if}
-                            </div>
-                        </div>
-                        <div class="row option">
-                            <div class="col-md-3">
-                                {if isset($smarty.session.token)}
-                                <a href="logout.php"><i class="fa fa-sign-out"></i></a>
-                                {/if}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<header class="top">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover"><a id="menuLink1" href="#" class="pure-menu-link"><span class="thumbnail"><img src="http://placehold.it/30x30/B2FA1B/000000" alt=""></span><span class="full_name">Janusz Janusz</span></a>
+                <ul class="pure-menu-children">
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span><i class="fa fa-sign-out"></i></span> Logout</a></li>
+                    <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span><i class="fa fa-user"></i></span> Profile</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </header>
