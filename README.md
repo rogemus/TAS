@@ -7,10 +7,10 @@ By dzialalo u was musicie zmienic `APP_ID` i `SECRET` na to wasze w pliku
 ` loginController.php `
 
 Logowanie 
-`  /loginPage.php`
+`  /login.php`
   
 Rejestracja
-` /registationPage.php`
+` /registation.php`
   
-Dodawanie statusu 
-` /statusesController.php`
+Dodawanie statusu i wyswietlanie ich
+` /statuses.php`

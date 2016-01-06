@@ -1,25 +1,25 @@
 {include file='header.tpl'}
 {include file='middle.tpl'}
 
-<form action="registrationController.php" method="post">
+<form name="registration_form" action="registrationController.php" onsubmit="return validateForm()" method="post">
 
     <label for="first_name">First Name</label>
-    <input type="text" name="first_name">
+    <input type="text" id="first_name" name="first_name">
 
     <label for="last_name">Last Name</label>
-    <input type="text" name="last_name">
+    <input type="text" id="last_name" name="last_name">
 
     <label for="profile_name">Profile Name</label>
-    <input type="text" name="profile_name">
+    <input type="text" id="profile_name" name="profile_name">
 
     <label for="email">Email</label>
-    <input type="email" name="email">
+    <input type="email" id="email" name="email">
 
     <label for="password">Password</label>
-    <input type="password" name="password">
+    <input type="password" id="password" name="password">
 
     <label for="password_confirmation">Password Confirmation</label>
-    <input type="password" name="password_confirmation">
+    <input type="password" id="password_confirmation" name="password_confirmation">
 
     <input type="submit" value="Register">
 

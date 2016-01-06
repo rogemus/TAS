@@ -7,13 +7,15 @@
  */
 
 
+session_start();
 require_once 'REST.php';
 require_once 'Smarty.php';
-
-session_start();
+require_once 'statusesController.php';
+require_once 'infoController.php';
 
 if ( !isset($_SESSION['token']) ) {
     $smarty->display('login.tpl');
 } else {
     $smarty->display('statuses.tpl');
 }
+

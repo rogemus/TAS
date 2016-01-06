@@ -8,6 +8,19 @@ Dodaj status
     <input type="submit" value="Dodaj">
 </form>
 
-Wszystkie statusy
+<hr>
+
+<hr>
+<h2>Wszystkie statusy</h2>
+
+{foreach from=$statuses|json_decode item=status}
+<div>
+    <img src="{$status->user->gravatar_url}" alt="">
+  <b>{$status->user->full_name}</b>
+</div>
+<div>
+   <p>{$status->content}</p>
+</div>
+{/foreach}
 
 {include file='footer.tpl'}

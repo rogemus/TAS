@@ -6,21 +6,18 @@
  * Date: 13.12.2015
  * Time: 10:25
  */
-class REST
-{
+class REST{
     private $curl;
 
     const API_URL = 'localhost:3000/';
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->curl = curl_init(self::API_URL);
 
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1);
     }
 
-    private function Execute()
-    {
+    private function Execute(){
         curl_setopt($this->curl, CURLINFO_HEADER_OUT, 1);
 
         $return = curl_exec($this->curl);
@@ -33,13 +30,11 @@ class REST
         return json_decode($return);
     }
 
-    public function AddOptions( $options )
-    {
+    public function AddOptions( $options ){
         curl_setopt($this->curl, CURLOPT_HTTPHEADER, $options);
     }
 
-    public function POST( $method, $data )
-    {
+    public function POST( $method, $data ){
         $data = json_encode($data);
 
         curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
@@ -50,8 +45,7 @@ class REST
         return $this->Execute();
     }
 
-    public function GET( $method )
-    {
+    public function GET( $method ){
         curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
 
         curl_setopt($this->curl, CURLOPT_HTTPGET, 1);
