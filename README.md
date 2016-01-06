@@ -1,3 +1,10 @@
+### Web klient
+## Wersja dynamiczna
+https://github.com/rogemus/TAS-Client
+## Wersja statyczna
+https://github.com/rogemus/TAS-Client-Static
+
+
 ##API
 [Dokumentacja](/v1_resources/index.md)
 
