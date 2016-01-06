@@ -16,7 +16,7 @@
                                 <header class="post-header pure-g">
                                     <div class="pure-u-1-5">
                                         <div class="thumbnail">
-                                            <img src="{$status->user->gravatar_url}" alt="">
+                                            <img src="{$status->user->gravatar_url}?s=45" alt="">
                                         </div>
                                     </div>
                                     <div class="pure-u-4-5">

@@ -5,7 +5,7 @@
                 <a id="menuLink1" href="#" class="pure-menu-link">
                    {if isset($smarty.session.token)}
                         <span class="thumbnail">
-                            <img src="{$user_avatar}" alt="">
+                            <img src="{$user_avatar}?s=30" alt="">
                         </span>
                    {/if}
                     <span class="full_name">
