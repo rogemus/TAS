@@ -29,7 +29,7 @@ module.exports = function(grunt) {
         options: {
           browsers: ['last 5 versions']
         },
-        src: "src/css/*.css"
+        src: ["src/css/*.css", "!src/css/_bower.css"]
       }
     },
 
@@ -126,13 +126,11 @@ module.exports = function(grunt) {
         cssDest: 'src/css/_bower.css',
         mainFiles: {
           'font-awesome': ['css/font-awesome.min.css'],
-          'masonry': ['dist/masonry.pkgd.min.js']
         },
         dev: {
           include: [
             'font-awesome',
-            'pure',
-            'masonry'
+            'pure'
           ]
         }
       }
@@ -150,7 +148,8 @@ module.exports = function(grunt) {
           "src/login.html": ["src/jade/login.jade"],
           "src/registration.html": ["src/jade/registration.jade"],
           "src/single-post.html": ["src/jade/single-post.jade"],
-          "src/profile-page.html": ["src/jade/profile-page.jade"]
+          "src/profile-page.html": ["src/jade/profile-page.jade"],
+          "src/add-edit-post-page.html": ["src/jade/add-edit-post-page.jade"]
         }
       }
     }
@@ -175,7 +174,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
 
 
-  grunt.task.registerTask('dev', ['clean','bower_concat', 'jshint', 'sass', 'autoprefixer','jade']);
+  grunt.task.registerTask('dev', ['clean', 'bower_concat', 'jshint', 'sass', 'autoprefixer', 'jade']);
   //grunt.task.registerTask('dev', ['jshint', 'sass', 'autoprefixer']);
   grunt.task.registerTask('prod', ['concat', 'uglify', 'cssmin', 'imagemin', 'copy', 'bower_concat']);
 

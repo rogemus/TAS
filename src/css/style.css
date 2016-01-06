@@ -232,6 +232,10 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   padding: 5px 0;
 }
 
+.single-post {
+  margin: 0 auto;
+}
+
 .shadow {
   box-shadow: 2px 2px 14px 0 #E0E0E0;
   border-top: 1px solid #fff;
@@ -307,6 +311,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 
 .profile-page {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
 }
 .profile-page .profile-info {
   width: 175px;
@@ -334,6 +339,53 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 }
 .profile-page .post-box {
   width: 375px;
+}
+
+.add-edit-post {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.add-edit-post .post-box {
+  margin: 0 auto;
+}
+.add-edit-post .post-content {
+  padding: 15px;
+}
+.add-edit-post .post-l-wide {
+  width: 600px;
+}
+.add-edit-post .post-main {
+  margin: 15px auto;
+}
+.add-edit-post .post-main textarea {
+  width: 96%;
+  height: 150px;
+  border-radius: 5px;
+  border: 1px solid #1784C7;
+  padding: 10px;
+}
+.add-edit-post .post-footer {
+  margin: 15px auto;
+}
+.add-edit-post .post-footer input[type="file"] {
+  padding: 10px 0;
+}
+.add-edit-post .post-footer .attachment-file, .add-edit-post .post-footer .attachment-img {
+  padding: 10px 0;
+  border-bottom: 1px solid gainsboro;
+}
+.add-edit-post .post-footer .attachment-file span, .add-edit-post .post-footer .attachment-img span {
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #1C1F22;
+  display: block;
+}
+.add-edit-post .post-footer .post-submit {
+  padding: 10px;
+}
+.add-edit-post .post-footer .post-submit input {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
 }
 
 main {
