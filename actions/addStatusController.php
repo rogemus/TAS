@@ -19,4 +19,4 @@ $rest->POST('api/v1/statuses/new', array(
     'content' => $_POST['content'])
 );
 
-header('Location: statuses.php');
+header('Location: ../index.php');

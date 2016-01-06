@@ -11,7 +11,7 @@
                     <article class="post">
                         <div class="shadow">
                             <div class="post-content">
-                                <form action="addStatusController.php" method="post">
+                                <form action="actions/addStatusController.php" method="post">
                                     <div class="post-main post-edit-content">
                                         <textarea name="content" class="pure-input-1">Content</textarea>
                                         <div class="post-footer">
