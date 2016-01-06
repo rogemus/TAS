@@ -4,7 +4,7 @@
 TODO
 
 ##Register Your App
-Wchodzimy na stronę: `http://0.0.0.0:3000/oauth/applications`. Klikamy **New Application**.
+Wchodzimy na stronę: `http://localhost:3000/oauth/applications`. Klikamy **New Application**.
 ```
 Name: NzwaAplikacji
 Redirect URI: urn:ietf:wg:oauth:2.0:oob
@@ -41,7 +41,7 @@ curl -H "Content-Type: application/json" \
 "email":"sierra@a.com",
 "password":"12345678",
 "password_confirmation":"12345678"}' \
-http://0.0.0.0:3000/api/v1/users/sign_up
+http://localhost:3000/api/v1/users/sign_up
 ```
 ## Index
 
