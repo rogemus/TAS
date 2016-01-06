@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="baef13d7-7853-42d8-8455-29b2a83bbef6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smarty/templates/login.tpl" afterPath="$PROJECT_DIR$/smarty/templates/login.tpl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/smarty/templates/registration.tpl" afterPath="$PROJECT_DIR$/smarty/templates/registration.tpl" />
     </list>
     <ignored path="okonbok_client.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.tpl" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/smarty/templates/login.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.05862069">
+            <state vertical-scroll-proportion="-1.3076923">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -54,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.tpl" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registration.tpl" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/smarty/templates/registration.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9615384">
-              <caret line="3" column="113" selection-start-line="3" selection-start-column="113" selection-end-line="3" selection-end-column="113" />
+            <state vertical-scroll-proportion="0.20517242">
+              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -116,7 +117,6 @@
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/smarty/templates/header.tpl" />
         <option value="$PROJECT_DIR$/registrationController.php" />
-        <option value="$PROJECT_DIR$/smarty/templates/registration.tpl" />
         <option value="$PROJECT_DIR$/assets/js/app.js" />
         <option value="$PROJECT_DIR$/infoController'.php" />
         <option value="$PROJECT_DIR$/userController.php" />
@@ -133,6 +133,7 @@
         <option value="$PROJECT_DIR$/REST.php" />
         <option value="$PROJECT_DIR$/addStatusController.php" />
         <option value="$PROJECT_DIR$/smarty/templates/login.tpl" />
+        <option value="$PROJECT_DIR$/smarty/templates/registration.tpl" />
       </list>
     </option>
   </component>
@@ -514,14 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/smarty/templates/registration.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384">
-          <caret line="3" column="113" selection-start-line="3" selection-start-column="113" selection-end-line="3" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/statuses.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923">
@@ -540,8 +533,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/smarty/templates/login.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05862069">
+        <state vertical-scroll-proportion="-1.3076923">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/smarty/templates/registration.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20517242">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding />
         </state>
       </provider>

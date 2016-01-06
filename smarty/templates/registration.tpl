@@ -1,27 +1,45 @@
 {include file='header.tpl'}
 {include file='middle.tpl'}
 
-<form name="registration_form" action="registrationController.php" onsubmit="return validateForm()" method="post">
+<div class="wrapper">
+    <div class="header"></div>
+    <div class="grid"></div>
+    <div class="form-box">
+        <header class="logo">
+            <h2>OkonBOOK</h2>
+        </header>
+        <div class="content">
+            <form class="pure-form pure-form-stacked" name="registration_form" action="registrationController.php" method="post">
+                <fieldset>
+                    <p>
+                        <label for="first_name">First Name</label>
+                        <input id="first_name" type="text" placeholder="First Name" name="first_name">
+                    </p>
+                    <p>
+                        <label for="last_name">Last Name</label>
+                        <input id="last_name" type="text" placeholder="Last Name" name="last_name">
+                    </p>
+                    <p>
+                        <label for="profile_name">Profile Name</label>
+                        <input id="profile_name" type="text" placeholder="Profile Name" name="profile_name">
+                    </p>
+                    <p>
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" placeholder="E-mail" name="email">
+                    </p>
+                    <p>
+                        <label for="password">Password</label>
+                        <input id="password" type="password" placeholder="Password">
+                    </p>
+                    <p>
+                        <label for="password_confirmation">Password Confirmation</label>
+                        <input id="password_confirmation" type="password" placeholder="Password Confirmation">
+                    </p>
+                    <input type="submit" value="Sing in">
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
 
-    <label for="first_name">First Name</label>
-    <input type="text" id="first_name" name="first_name">
-
-    <label for="last_name">Last Name</label>
-    <input type="text" id="last_name" name="last_name">
-
-    <label for="profile_name">Profile Name</label>
-    <input type="text" id="profile_name" name="profile_name">
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email">
-
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-
-    <label for="password_confirmation">Password Confirmation</label>
-    <input type="password" id="password_confirmation" name="password_confirmation">
-
-    <input type="submit" value="Register">
-
-</form>
 {include file='footer.tpl'}
