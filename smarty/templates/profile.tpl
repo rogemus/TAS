@@ -16,30 +16,29 @@
                 <div class="pure-u-1-5">
                     <div class="profile-info">
                         <div class="shadow">
-                            {foreach from=$statuses|json_decode item=status}
-                                {if $status->user->id ==  $status_id}
+
+
                                     <div class="profile-content">
                                         <div class="thumbnail avatar">
-                                            <img src="{$status->user->gravatar_url}?s=175" alt="" class="pure-img">
+                                            <img src="{$user->gravatar_url}?s=175" alt="" class="pure-img">
                                         </div>
                                         <div class="full_name">
-                                            <span>{$status->user->full_name}</span>
+                                            <span>{$user->full_name}</span>
                                         </div>
                                         <div class="profile-user-info">
                                             <p><b>User profile name</b> <br>
                                                 <span>
-                                                    {$status->user->profile_name}
+                                                    {$user->profile_name}
                                                 </span>
                                             </p>
                                             <p><b>User email</b> <br>
                                                 <span>
-                                                    {$status->user->email}
+                                                    {$user->email}
                                                 </span>
                                             </p>
                                         </div>
                                     </div>
-                                {/if}
-                            {/foreach}
+
                         </div>
                     </div>
                 </div>

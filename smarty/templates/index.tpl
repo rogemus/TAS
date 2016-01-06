@@ -21,7 +21,7 @@
                                     </div>
                                     <div class="pure-u-4-5">
                                         <div class="full_name">
-                                            <a href="profile-page.html">{$status->user->full_name}</a>
+                                            <a href="profile.php?user_id={$status->user->id}">{$status->user->full_name}</a>
                                         </div>
                                         <div class="date">
                                             <a href="single-post.php?status_id={$status->id}">{$status->created_at|date_format:"%e %b %Y"}</a>
