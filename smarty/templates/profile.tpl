@@ -53,10 +53,10 @@
                                                 <header class="post-header pure-g">
                                                     <div class="pure-u-5-5">
                                                         <div class="full_name">
-                                                            <a href="profile-page.html">{$status->user->full_name}</a>
+                                                            <a href="">{$status->user->full_name}</a>
                                                         </div>
                                                         <div class="date">
-                                                            <a href="single-post.html">{$status->created_at|date_format:"%e %b %Y"}</a>
+                                                            <a href="single-post.php?status_id={$status->id}">{$status->created_at|date_format:"%e %b %Y"}</a>
                                                         </div>
                                                     </div>
                                                 </header>
