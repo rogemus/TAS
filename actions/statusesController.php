@@ -10,14 +10,20 @@
 require_once 'REST.php';
 require_once 'Smarty.php';
 
-//Wszystkie statusy
-$rest = new REST();
-$result = null;
-$rest->AddOptions(array(
-    'Content-Type: application/json',
-    'Authorization: Bearer '.$_SESSION['token']
-));
 
-$result = $rest->GET('api/v1/statuses/feed');
-$x = json_encode($result);
-$smarty->assign('statuses', $x);
+if (isset($_SESSION['token'])) {
+//Wszystkie statusy
+    $rest = new REST();
+    $result = null;
+    $rest->AddOptions(array(
+        'Content-Type: application/json',
+        'Authorization: Bearer ' . $_SESSION['token']
+    ));
+
+    $result = $rest->GET('api/v1/statuses/feed');
+    $x = json_encode($result);
+    $smarty->assign('statuses', $x);
+} else {
+    //$smarty->display('index.tpl');
+}
+
