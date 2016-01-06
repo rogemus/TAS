@@ -9,15 +9,15 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" action="action/loginController.php" method="post">
+                <form class="pure-form pure-form-stacked" action="actions/loginController.php" method="post">
                     <fieldset>
                         <p>
                             <label for="email">Email</label>
-                            <input id="email" type="email" placeholder="Email">
+                            <input id="email" name="email" type="email" placeholder="Email">
                         </p>
                         <p>
                             <label for="password">Password</label>
-                            <input id="password" type="password" placeholder="Password">
+                            <input id="password" name="password" type="password" placeholder="Password">
                         </p>
                         <input type="submit" class="pure-button pure-button-primary" value="Login">
                     </fieldset>
