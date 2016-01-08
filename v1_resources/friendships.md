@@ -1,13 +1,14 @@
 #Friendships
 
+### [Friendships](/)
 | Endpoint | Description |
 | ---- | --------------- |
-| [GET /friendships]()|Lista znajomości właściciela (OAUTH)|
-| [POST /friendships]()|Nowa znajomość(OAUTH)|
-| [POST /friendships/create]()|Create friendships(OAUTH)|
-| [PUT /friendships/:id/edit]() | Edit friendships(OAUTH)|
-|[PUT /friendships/:id/accept]()|Accept friendships(OAUTH)|
-|[DELETE /friendships/:id]()|Delete friendship(OAUTH)| 
+| [GET /friendships](/v1_resources/friendships.md#get-friendships)|Lista znajomości właściciela (OAUTH)|
+| [POST /friendships](/v1_resources/friendships.md#post-friendships)|Nowa znajomość(OAUTH)|
+| [POST /friendships/create](/v1_resources/friendships.md#post-friendshipscreate)|Create friendships(OAUTH)|
+| [PUT /friendships/:id/edit](/v1_resources/friendships.md) | Edit friendships|
+|[PUT /friendships/:id/accept](/v1_resources/friendships.md#put-friendshipsidaccept)|Accept friendships|
+|[DELETE /friendships/:id](/v1_resources/friendships.md#delete-friendshipsid)|Delete friendship|
 
 
 ## `GET /friendships`
