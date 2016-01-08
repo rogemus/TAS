@@ -65,6 +65,16 @@ Przykład: `http://0.0.0.0:3000/api/v1/statuses/statuses`
 | GET /users/me|Informacje o "zalogowanym" użytkowniku (OAUTH)|
 | POST /users/sign_up" | Nowy użytkownik|
 
+### [Friendships](/)
+| Endpoint | Description |
+| ---- | --------------- |
+| [GET /friendships](v1_resources/friendships.md)|Lista znajomości właściciela (OAUTH)|
+| [POST /friendships](v1_resources/friendships.md)|Nowa znajomość(OAUTH)|
+| [POST /friendships/create](v1_resources/friendships.md)|Create friendships(OAUTH)|
+| [PUT /friendships/:id/edit](v1_resources/friendships.md) | Edit friendships|
+|[PUT /friendships/:id/accept](v1_resources/friendships.md)|Accept friendships|
+|[DELETE /friendships/:id](v1_resources/friendships.md)|Delete friendship|
+
 
 
 
