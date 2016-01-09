@@ -18,4 +18,5 @@
 main {
     @extend %clearfix;
     font-family: $open-sans;
+    background: darken($white, 12);
 }

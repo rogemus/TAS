@@ -247,6 +247,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 .post-box {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   width: 300px;
+  background: #fff;
 }
 .post-box.post-wide {
   width: 900px;
@@ -307,6 +308,15 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 .post-box article.post .post-content .post-main p {
   padding: 15px;
   line-height: normal;
+}
+.post-box article.post .post-content .post-img {
+  height: auto;
+}
+.post-box article.post .post-content .post-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .profile-page {
@@ -390,4 +400,5 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 
 main {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  background: #d6d6d6;
 }

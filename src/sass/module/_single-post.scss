@@ -13,6 +13,7 @@
 .post-box {
   font-family: $open-sans;
   width: 300px;
+  background: #fff;
   //float: left;
   &.post-wide {
     width: 900px;
@@ -74,7 +75,15 @@
           line-height: normal;
         }
       }
-      .post-img {}
+      .post-img {
+        height: auto;
+        img{
+          display: block;
+          margin: 0 auto;
+          max-width: 100%;
+          height: auto;
+        }
+      }
       footer.post-footer {}
     }
   }

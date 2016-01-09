@@ -11,3 +11,5 @@ var msnry = new Masonry( elem, {
   itemSelector: '.grid-item2',
   columnWidth: 375
 });
+
+$('.thumbnail-img').featherlight();

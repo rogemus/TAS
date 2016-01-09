@@ -21,33 +21,33 @@
             <h2>OkonBOOK</h2>
           </header>
           <div class="content">
-            <form class="pure-form pure-form-stacked">
+            <form name="register-form" class="pure-form pure-form-stacked">
               <fieldset>
                 <p>
                   <label for="first_name">First Name</label>
-                  <input id="first_name" type="text" placeholder="First Name" name="first_name">
+                  <input id="first_name" type="text" placeholder="First Name" name="first_name" data-validate="required,alphaNumeric,size(3,18)">
                 </p>
                 <p>
                   <label for="last_name">Last Name</label>
-                  <input id="last_name" type="text" placeholder="Last Name" name="last_name">
+                  <input id="last_name" type="text" placeholder="Last Name" name="last_name" data-validate="required,alphaNumeric,size(3,18)">
                 </p>
                 <p>
                   <label for="profile_name">Profile Name</label>
-                  <input id="first_name" type="text" placeholder="Profile Name" name="profile_name">
+                  <input id="first_name" type="text" placeholder="Profile Name" name="profile_name" data-validate="required,alphaNumeric,size(3,18)">
                 </p>
                 <p>
                   <label for="email">E-mail</label>
-                  <input id="first_name" type="email" placeholder="E-mail" name="email">
+                  <input id="first_name" type="email" placeholder="E-mail" name="email" data-validate="required,email">
                 </p>
                 <p>
                   <label for="password">Password</label>
-                  <input id="password" type="password" placeholder="Password">
+                  <input id="password" type="password" placeholder="Password" data-validate="required,email">
                 </p>
                 <p>
                   <label for="password_confirmation">Password Confirmation</label>
-                  <input id="password_confirmation" type="password" placeholder="Password Confirmation">
+                  <input id="password_confirmation" type="password" placeholder="Password Confirmation" data-validate="required,email">
                 </p>
-                <button type="submit" class="pure-button pure-button-primary">Register</button>
+                <input type="submit" value="Register" class="submit pure-button pure-button-primary">
               </fieldset>
             </form>
           </div>

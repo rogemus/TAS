@@ -2,14 +2,15 @@
   header.logo
     h2 OkonBOOK
   .content
-    form.pure-form.pure-form-stacked
+    form.pure-form.pure-form-stacked(name="login-form")
       fieldset
         p
           label(for='email') Email
-          input#email(type='email', placeholder='Email')
+          input#email(type='email' placeholder='Email' name="email" data-validate="required,email")
         p
           label(for='password') Password
-          input#password(type='password', placeholder='Password')
-        button.pure-button.pure-button-primary(type='submit') Sign in
+          input#password(type='password' placeholder='Password' name="password" data-validate="required,size(6,12)")
+        input.pure-button.pure-button-primary(type='submit' value="Sign in") 
+          
 
             
