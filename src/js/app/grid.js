@@ -18,3 +18,10 @@ var msnry = new Masonry( elem, {
   itemSelector: '.friend',
   columnWidth: 150
 });
+
+var elem = document.querySelector('.friends-add');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.friend',
+  columnWidth: 150
+});

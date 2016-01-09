@@ -21,3 +21,8 @@ main {
   font-family: $open-sans;
   background: darken($white, 12);
 }
+hr {
+  border: 0;
+  height: 1px;
+  background: darken($white,15);
+}

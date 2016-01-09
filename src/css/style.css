@@ -402,6 +402,10 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   margin: 0 auto;
 }
+.friend-page .add-friend {
+  text-align: center;
+  margin-bottom: 5px;
+}
 .friend-page .post-box.friend {
   width: 150px;
 }
@@ -431,4 +435,10 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 main {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background: #d6d6d6;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #cfcfcf;
 }
