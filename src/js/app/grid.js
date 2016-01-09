@@ -12,4 +12,9 @@ var msnry = new Masonry( elem, {
   columnWidth: 375
 });
 
-$('.thumbnail-img').featherlight();
+var elem = document.querySelector('.friends');
+var msnry = new Masonry( elem, {
+  // options
+  itemSelector: '.friend',
+  columnWidth: 150
+});

@@ -15,8 +15,9 @@
 //PAGE
 @import "page/_profile-page.scss";
 @import "page/_add-edit-post-page.scss";
+@import "page/_friend-list.scss";
 main {
-    @extend %clearfix;
-    font-family: $open-sans;
-    background: darken($white, 12);
+  @extend %clearfix;
+  font-family: $open-sans;
+  background: darken($white, 12);
 }

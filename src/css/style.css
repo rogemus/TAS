@@ -398,6 +398,36 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   margin: 0 auto;
 }
 
+.friend-page {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+}
+.friend-page .post-box.friend {
+  width: 150px;
+}
+.friend-page .post-box.friend .full_name {
+  font-size: 14px;
+  font-size: 0.875rem;
+  text-align: center;
+  padding: 10px 0;
+}
+.friend-page .post-box.friend .full_name span {
+  color: #1784C7;
+  text-transform: capitalize;
+}
+.friend-page .post-box.friend .full_name a {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font: inherit;
+  color: #1784C7;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.friend-page .post-box.friend .thumbnail {
+  display: block;
+  margin: 0 auto;
+}
+
 main {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background: #d6d6d6;

@@ -149,7 +149,8 @@ module.exports = function(grunt) {
           "src/registration.html": ["src/jade/registration.jade"],
           "src/single-post.html": ["src/jade/single-post.jade"],
           "src/profile-page.html": ["src/jade/profile-page.jade"],
-          "src/add-edit-post-page.html": ["src/jade/add-edit-post-page.jade"]
+          "src/add-edit-post-page.html": ["src/jade/add-edit-post-page.jade"],
+          "src/friends.html": ["src/jade/friends.jade"]
         }
       }
     }
