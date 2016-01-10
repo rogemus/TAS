@@ -24,7 +24,71 @@ curl -H "Content-Type: application/json" \
 ```
 ###Example Response
 ```json
-TODO
+[{
+  "id": 3,
+  "user_id": 1,
+  "friend_id": 1,
+  "created_at": "2016-01-09T22:16:34.980Z",
+  "updated_at": "2016-01-09T22:16:34.980Z",
+  "state": "pending",
+  "user": {
+    "id": 1,
+    "profile_name": "janusz",
+    "full_name": "janusz janusz",
+    "email": "janusz@janusz.com",
+    "gravatar_url": "http://gravatar.com/avatar/4261e10e0074438b83147a48d5bca2f9"
+  },
+  "friend": {
+    "id": 1,
+    "profile_name": "janusz",
+    "full_name": "janusz janusz",
+    "email": "janusz@janusz.com",
+    "gravatar_url": "http://gravatar.com/avatar/4261e10e0074438b83147a48d5bca2f9"
+  }
+}, {
+  "id": 4,
+  "user_id": 1,
+  "friend_id": 1,
+  "created_at": "2016-01-09T22:16:34.984Z",
+  "updated_at": "2016-01-09T22:16:34.984Z",
+  "state": "requested",
+  "user": {
+    "id": 1,
+    "profile_name": "janusz",
+    "full_name": "janusz janusz",
+    "email": "janusz@janusz.com",
+    "gravatar_url": "http://gravatar.com/avatar/4261e10e0074438b83147a48d5bca2f9"
+  },
+  "friend": {
+    "id": 1,
+    "profile_name": "janusz",
+    "full_name": "janusz janusz",
+    "email": "janusz@janusz.com",
+    "gravatar_url": "http://gravatar.com/avatar/4261e10e0074438b83147a48d5bca2f9"
+  }
+}, {
+  "id": 1,
+  "user_id": 1,
+  "friend_id": 2,
+  "created_at": "2016-01-09T21:42:00.826Z",
+  "updated_at": "2016-01-09T21:42:28.079Z",
+  "state": "accepted",
+  "user": {
+    "id": 1,
+    "profile_name": "janusz",
+    "full_name": "janusz janusz",
+    "email": "janusz@janusz.com",
+    "gravatar_url": "http://gravatar.com/avatar/4261e10e0074438b83147a48d5bca2f9"
+  },
+  "friend": {
+    "id": 2,
+    "profile_name": "janusz2",
+    "full_name": "janusz2 janusz2",
+    "email": "janusz2@janusz2.com",
+    "gravatar_url": "http://gravatar.com/avatar/d7b16000ae1b70faf471512aa7e593e3"
+  }
+}]
+
 ```
 
 ## `POST /friendships/create`
