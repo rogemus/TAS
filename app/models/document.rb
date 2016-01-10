@@ -1,9 +1,9 @@
 class Document < ActiveRecord::Base
 
-  attr_accessible :attachment, :remove_attachment
+  attr_accessible :attachment, :remove_attachment, :attachment_path
   has_attached_file :attachment
 
-validates_attachment_content_type :attachment, :content_type =>['application/pdf'], :message =>['Only pdf file']
+
 
   attr_accessor :remove_attachment
 

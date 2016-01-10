@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
 
   create_table "documents", force: true do |t|
     t.integer  "user_id"
+    t.string   "attachment_path"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "attachment_file_name"
@@ -27,6 +28,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
 
   create_table "images", force: true do |t|
     t.integer  "user_id"
+    t.string   "image_path"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "img_file_name"

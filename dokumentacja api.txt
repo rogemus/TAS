@@ -1,0 +1,9 @@
+Dodawanie zdjêæ
+curl -v http://localhost:3000/upload -F avatar=@c:/sites/japierdole.jpg
+Dodawanie plików
+curl -v http://localhost:3000/upload1 -F avatar=@c:/sites/alg.pdf
+
+Stuff to do:
+Rêczne dodawanie id obrazu i pliku do statusu
+
+Dodaæ weryfikacje pliku(typy, rozmiar, etc)
