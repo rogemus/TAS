@@ -28,11 +28,11 @@ module Friendships
 			desc 'New friendships'
 			oauth2
 			params do
-				requires :friend_id, type: String, desc: 'User profile_name'
+				requires :friend_id, type: String, desc: 'User id'
 				# TODO Nie wiem czy lepsza opcja by nie było podawanie ID uzytkownika
 			end
 			post :new do
-				@friend = User.where(profile_name: params[:friend_id]).first
+				@friend = User.where(id: params[:friend_id]).first
 				resource_owner.user_friendships.new(friend: @friend)
 			end
 
@@ -47,7 +47,7 @@ module Friendships
 				end
 			end
 			post :create do
-				@friend = User.where(profile_name: params[:user_friendship][:friend_id]).first
+				@friend = User.where(id: params[:user_friendship][:friend_id]).first
 				@user_friendship = UserFriendship.request(resource_owner, @friend)
 				if @user_friendship.new_record?
 					error!({ error: 'unexpected error', detail: 'There was a problem creating that friend request.' }, 500)
