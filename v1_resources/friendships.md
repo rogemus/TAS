@@ -100,15 +100,16 @@ PS. Nie wiem co to robi. Radzę używać create
 
 | Name            | Required? | Type    | Description                                                                                                                                      |
 |:----------------|:----------|:--------|:---------|
-| `friend_id` | required  | string | User profile_name |
+| `friend_id` | required  | string | User ID |
 
 ###Example Request
 
 ```bash
 curl -H "Content-Type: application/json" \
 -H "Authorization: Bearer  <ACCESS_TOKEN>" \
--X POST -d '{"friend_id":"<FRIEND_ID>"}' \
-http://0.0.0.0:3000/api/v1/friendships/create
+-X POST -d '{"user_friendship": {"friend_id":"<FRIEND_ID>"}}' \
+http://localhost:3000/api/v1/friendships/new
+
 ```
 ###Example Response
 ```json
