@@ -20,7 +20,7 @@ Lista znajomości właściciela
 ```bash
 curl -H "Content-Type: application/json" \
 -H "Authorization: Bearer <ACCESS_TOKEN>" \
--X GET http://0.0.0.0:3000/api/v1/friendships
+-X GET http://0.0.0.0:3000/api/v1/friendships/index
 ```
 ###Example Response
 ```json
