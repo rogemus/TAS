@@ -16,7 +16,8 @@ module Files
                     :filename => avatar[:filename],
                     :type => avatar[:type],
                     :headers => avatar[:head],
-                    :tempfile => avatar[:tempfile]
+                    :tempfile => avatar[:tempfile],
+                    #:user_id => integer(2)
                 }
 
                 # creates a new User object

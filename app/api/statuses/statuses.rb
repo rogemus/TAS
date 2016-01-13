@@ -1,7 +1,7 @@
 # require 'doorkeeper/grape/helpers'
 module Statuses
 	class StatusesController < Grape::API
-		version 'v1', using: :path 
+		version 'v1', using: :path
 		format :json
 		formatter :json, Grape::Formatter::ActiveModelSerializers
 		use ::WineBouncer::OAuth2
@@ -51,18 +51,22 @@ module Statuses
 			oauth2
 			params do
 				requires :content, type: String, desc: 'Status content'
+				optional :image_id, type: Integer, desc: 'id obrazu', default: 0
+				optional :document_id, type: Integer, desc: 'id pliku', default: 0
 			end
 			post :new do
 				Status.create!({
 					user_id: resource_owner.id,
-					content: params[:content]
+					content: params[:content],
+					:image_id => Integer(params[:image_id]),
+					:document_id => Integer(params[:document_id])
 				})
 			end
 
-			
-			desc 'Feed for user ID' 
+
+			desc 'Feed for user ID'
 			#oauth2
-			params do 
+			params do
 				requires :id, type: Integer, desc: 'Post ID.'
 			end
 			get ':id' do
@@ -74,12 +78,17 @@ module Statuses
 			params do
 				requires :id, type: Integer, desc: 'Status ID.'
 				requires :content, type: String, desc: 'Updated status content'
+				optional :image_id, type: Integer, desc: 'id obrazu', default: 0
+				optional :document_id, type: Integer, desc: 'id pliku', default: 0
 			end
 			put ':id' do
 				resource_owner.statuses.find(params[:id]).update({
 					user_id: resource_owner.id,
-					content: params[:content]
-					})
+					content: params[:content],
+					#sprawdzanie czy są pliki i ew zamiana id
+					:image_id => Integer(params[:image_id]),
+					:document_id => Integer(params[:document_id])
+})
 			end
 
 			desc 'Delete a status'

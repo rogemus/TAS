@@ -1,9 +1,9 @@
 class Image < ActiveRecord::Base
 
-  attr_accessible :img, :image_path
+  attr_accessible :img, :image_path, :remove_img, :user_id
   has_attached_file :img
 
-    
+
   attr_accessor :remove_img
 
   before_save :perform_img_removal
