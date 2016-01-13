@@ -1,36 +1,19 @@
 Dodawanie zdjêæ
-curl -v http://localhost:3000/upload -F avatar=@c:/sites/japierdole.jpg
+curl -v http://localhost:3000/upload -F avatar=@<pe³na œcie¿ka do zdjêcia>
 Dodawanie plików
-curl -v http://localhost:3000/upload1 -F avatar=@c:/sites/alg.pdf
+curl -v http://localhost:3000/upload1 -F avatar=@<pe³na œcie¿ka do pliku>
 
-Stuff to do:
-Rêczne dodawanie id obrazu i pliku do statusu
 
+
+
+curl -H "Content-Type: application/json" -H 'Authorization: Bearer <token>' \
+-d '{"content":"To jest moj nowy status", "image_id":"<id_zdjêcia>", "document_id":"<id_pliku>"}' -X POST http://localhost:3000/api/v1/statuses/new
+
+
+curl -H "Content-Type: application/json" -H 'Authorization: Bearer <token>' \
+-d '{"content":"To jest moj nowy status", "image_id":"<id_zdjêcia>", "document_id":"<id_pliku>"}' -X PUT http://localhost:3000/api/v1/statuses/1
+
+To do:
 Dodaæ weryfikacje pliku(typy, rozmiar, etc)
-
-
-curl -H "Content-Type: application/json" \
--X POST -d '{"client_id":"91e69bd98599be879ec52e769a9536582e05e3a9477a544eb4628b082c4609a9",
- "client_secret":"ff611e6157de85a83053f225a2023ee39da44395d46109077818f8043f0d6cd9",
- "grant_type":"password",
- "password":"12345678",
- "username":"sierra@a.com"}' \
- http://localhost:3000/oauth/token
-
-
-7c42f869c1f547e3e51178085fb3106610a5646a13e7d076e3c3192d2fd1fef5
-
-curl -H "Content-Type: application/json" -H 'Authorization: Bearer 47ab3f79ff9fe2a146c26bd240445e8a7d08a566a87f1303c7bf376380e42942' \
--d '{"content":"To jest moj nowy status", "image_id":"2", "document_id":"1"}' -X POST http://localhost:3000/api/v1/statuses/new
-
-curl -H "Content-Type: application/json" -H 'Authorization: Bearer 47ab3f79ff9fe2a146c26bd240445e8a7d08a566a87f1303c7bf376380e42942' \
--d '{"content":"To jest moj nowy status2"}' -X POST http://localhost:3000/api/v1/statuses/new
-
-
-curl -H "Content-Type: application/json" -H 'Authorization: Bearer 7c42f869c1f547e3e51178085fb3106610a5646a13e7d076e3c3192d2fd1fef5' \
--d '{"id":"1","content":"To jest moj nowy status", "image_id":"2", "document_id":"1"}' -X PUT http://localhost:3000/api/v1/statuses/update
-
-url -H "Content-Type: application/json" -H 'Authorization: Bearer 47ab3f79ff9fe2a146c26bd240445e8a7d08a566a87f1303c7bf376380e42942' \
--d '{"content":"To jest moj nowy status", "image_id":"2", "document_id":"1"}' -X PUT http://localhost:3000/api/v1/statuses/update/1
-
+Dodaæ tokeny.
 
