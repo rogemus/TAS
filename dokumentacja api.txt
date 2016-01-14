@@ -18,4 +18,4 @@ curl -H 'Authorization: Bearer <token>' \
 
 To do:
 Dodaæ weryfikacje pliku(typy, rozmiar, etc)
-Usuwanie plików
+Aktualizacja Plików?
