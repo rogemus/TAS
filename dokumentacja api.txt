@@ -1,19 +1,11 @@
 Dodawanie zdjêæ
-curl -v http://localhost:3000/upload -F avatar=@<pe³na œcie¿ka do zdjêcia>
+curl -H 'Authorization: Bearer <token>' \
+-F avatar=@ <zdjêcie> -X POST http://localhost:3000/upload
 Dodawanie plików
-curl -v http://localhost:3000/upload1 -F avatar=@<pe³na œcie¿ka do pliku>
+curl -H 'Authorization: Bearer <token>' \
+-F avatar=@ <plik> -X POST http://localhost:3000/upload1
 
-
-
-
-curl -H "Content-Type: application/json" -H 'Authorization: Bearer <token>' \
--d '{"content":"To jest moj nowy status", "image_id":"<id_zdjêcia>", "document_id":"<id_pliku>"}' -X POST http://localhost:3000/api/v1/statuses/new
-
-
-curl -H "Content-Type: application/json" -H 'Authorization: Bearer <token>' \
--d '{"content":"To jest moj nowy status", "image_id":"<id_zdjêcia>", "document_id":"<id_pliku>"}' -X PUT http://localhost:3000/api/v1/statuses/1
 
 To do:
 Dodaæ weryfikacje pliku(typy, rozmiar, etc)
-Dodaæ tokeny.
-
+Nadanie plikowi user_id na podstawie tokenu(zmodyfikowaæ jasona, by wysy³a³ user_id jako int)

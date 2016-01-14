@@ -5,6 +5,7 @@ module Files
         format :json
 
         resource :upload do
+          oauth2
             post do
                 # takes the :avatar value and assigns it to a variable
                 avatar = params[:avatar]

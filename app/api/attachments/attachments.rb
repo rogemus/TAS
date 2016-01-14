@@ -5,6 +5,7 @@ module Attachments
         format :json
 
         resource :upload1 do
+          oauth2
             post do
                 # takes the :avatar value and assigns it to a variable
                 avatar = params[:avatar]
