@@ -5,7 +5,7 @@ module Attachments
         format :json
         use ::WineBouncer::OAuth2
 
-        resource :upload1 do
+        resource :upload_document do
           oauth2
           oauth2
             post do
@@ -40,6 +40,17 @@ module Attachments
                 # and...
                 pdf.save
             end
+        end
+
+        resource :delete_document do
+          oauth2
+          params do
+            requires :id, type: Integer, desc: 'document_id.'
+          end
+
+          delete ':id' do
+              Document.find(params[:id]).destroy
+          end
         end
 
     end

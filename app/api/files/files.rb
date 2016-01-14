@@ -5,7 +5,7 @@ module Files
         format :json
         use ::WineBouncer::OAuth2
 
-        resource :upload do
+        resource :upload_image do
           oauth2
             post do
                 # takes the :avatar value and assigns it to a variable
@@ -39,6 +39,19 @@ module Files
                 # and...
                 image.save
             end
+        end
+
+        resource :delete_image do
+          oauth2
+          params do
+            requires :id, type: Integer, desc: 'image_id.'
+          end
+
+          delete ':id' do
+              Image.find(params[:id]).destroy
+          end
+
+
         end
 
     end
