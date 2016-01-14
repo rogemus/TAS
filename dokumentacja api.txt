@@ -8,4 +8,4 @@ curl -H 'Authorization: Bearer <token>' \
 
 To do:
 Dodaæ weryfikacje pliku(typy, rozmiar, etc)
-Nadanie plikowi user_id na podstawie tokenu(zmodyfikowaæ jasona, by wysy³a³ user_id jako int)
+Usuwanie plików

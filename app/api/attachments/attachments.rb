@@ -3,8 +3,10 @@ module Attachments
     class AttachmentsController < Grape::API
         version 'v1', using: :header, vendor: 'some_vendor'
         format :json
+        use ::WineBouncer::OAuth2
 
         resource :upload1 do
+          oauth2
           oauth2
             post do
                 # takes the :avatar value and assigns it to a variable
@@ -23,6 +25,7 @@ module Attachments
 
                 # creates a new User object
                 pdf = Document.new
+                pdf.user_id = resource_owner.id
 
                 # This is the kind of File object Grape understands so let's
                 # pass the hash to it

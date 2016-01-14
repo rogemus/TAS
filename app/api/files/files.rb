@@ -3,6 +3,7 @@ module Files
     class FilesController < Grape::API
         version 'v1', using: :header, vendor: 'some_vendor'
         format :json
+        use ::WineBouncer::OAuth2
 
         resource :upload do
           oauth2
@@ -23,6 +24,7 @@ module Files
 
                 # creates a new User object
                 image = Image.new
+                image.user_id = resource_owner.id
 
                 # This is the kind of File object Grape understands so let's
                 # pass the hash to it
