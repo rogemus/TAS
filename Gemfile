@@ -22,8 +22,11 @@ gem 'font-awesome-sass', '~> 4.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.13'
 
+# Use mysql2 as the db for Active Record
+gem 'mysql2', '~> 0.3.13'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
