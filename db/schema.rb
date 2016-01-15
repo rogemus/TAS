@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027112016) do
+ActiveRecord::Schema.define(version: 20151216191012) do
+
+  create_table "documents", force: true do |t|
+    t.integer  "user_id"
+    t.string   "attachment_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id"
+
+  create_table "images", force: true do |t|
+    t.integer  "user_id"
+    t.string   "image_path"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "img_file_name"
+    t.string   "img_content_type"
+    t.integer  "img_file_size"
+    t.datetime "img_updated_at"
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
@@ -58,9 +84,22 @@ ActiveRecord::Schema.define(version: 20151027112016) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "document_id"
+    t.integer  "image_id"
   end
 
   add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
+
+  create_table "user_friendships", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+  end
+
+  add_index "user_friendships", ["state"], name: "index_user_friendships_on_state"
+  add_index "user_friendships", ["user_id", "friend_id"], name: "index_user_friendships_on_user_id_and_friend_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"

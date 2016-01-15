@@ -29,6 +29,29 @@ class StatusesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  //Mateusz
+  test "should create status when logged in" do
+	sign_in users(:userMat)
+	
+	assert_difference('Status.count')do
+		post :create, status: { content: @status.content}
+	end
+	
+	assert_redirected_to status_path(assigns(:status))
+  end 
+    
+	test "should create status for the current user when logged in" do
+	sign_in users(:userMat)
+	
+	assert_difference('Status.count')do
+		post :create, status: { content: @status.content}
+	end
+	
+	assert_redirected_to status_path(assigns(:status))
+  end
+
+//Mateusz end  
+  
   test "should get edit" do
     get :edit, id: @status
     assert_response :success

@@ -3,7 +3,7 @@
 
 <head>
   <title>TAS</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
       <%= csrf_meta_tags %>
 
@@ -41,6 +41,9 @@
                   </div>
                   <div class="col-md-3">
                     <%= link_to icon('cog'), edit_user_registration_path %>
+                  </div>
+                  <div class="col-md-3">
+                    <%= link_to 'Friends', user_friendships_path %>
                   </div>
                   <div class="col-md-3">
                     <%= link_to icon('sign-out'), logout_path %>
