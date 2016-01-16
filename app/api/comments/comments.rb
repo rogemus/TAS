@@ -36,7 +36,7 @@ module Comments
                requires :comment, type: String, desc: 'Komentarz'
              end
              put ':id' do
-               Comment.find(params[:id]).comment = params[:comment]
+               Comment.find(params[:post_id]).comment = params[:comment]
  			         end
  		        end
 
@@ -45,8 +45,8 @@ module Comments
               params do
                 requires :post_id, type: Integer, desc: 'Id komentarza'
               end
-              get ':post_id' do
-                Comment.find(params[:id])
+              get ':id' do
+                Comment.find(params[:id_post])
               end
             end
           end

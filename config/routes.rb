@@ -9,7 +9,7 @@ TAS::Application.routes.draw do
   mount Files::FilesController => '/'
   mount Attachments::AttachmentsController => '/'
   mount Comments::CommentsController => '/'
-
+  mount Messages::MessagesController => '/'
 
   as :user do
     get '/register', to: 'devise/registrations#new', as: :register
