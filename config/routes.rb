@@ -8,6 +8,7 @@ TAS::Application.routes.draw do
   mount Friendships::FriendshipsController => '/api'
   mount Files::FilesController => '/'
   mount Attachments::AttachmentsController => '/'
+  mount Comments::CommentsController => '/'
 
 
   as :user do

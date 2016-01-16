@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216191012) do
+ActiveRecord::Schema.define(version: 20160115143508) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "author_id"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "documents", force: true do |t|
     t.integer  "user_id"
@@ -24,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.datetime "attachment_updated_at"
   end
 
-  add_index "documents", ["user_id"], name: "index_documents_on_user_id"
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
 
   create_table "images", force: true do |t|
     t.integer  "user_id"
@@ -37,7 +45,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.datetime "img_updated_at"
   end
 
-  add_index "images", ["user_id"], name: "index_images_on_user_id"
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false
@@ -50,7 +58,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.string   "scopes"
   end
 
-  add_index "oauth_access_grants", ["token"], name: "index_oauth_access_grants_on_token", unique: true
+  add_index "oauth_access_grants", ["token"], name: "index_oauth_access_grants_on_token", unique: true, using: :btree
 
   create_table "oauth_access_tokens", force: true do |t|
     t.integer  "resource_owner_id"
@@ -63,9 +71,9 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.string   "scopes"
   end
 
-  add_index "oauth_access_tokens", ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true
-  add_index "oauth_access_tokens", ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id"
-  add_index "oauth_access_tokens", ["token"], name: "index_oauth_access_tokens_on_token", unique: true
+  add_index "oauth_access_tokens", ["refresh_token"], name: "index_oauth_access_tokens_on_refresh_token", unique: true, using: :btree
+  add_index "oauth_access_tokens", ["resource_owner_id"], name: "index_oauth_access_tokens_on_resource_owner_id", using: :btree
+  add_index "oauth_access_tokens", ["token"], name: "index_oauth_access_tokens_on_token", unique: true, using: :btree
 
   create_table "oauth_applications", force: true do |t|
     t.string   "name",                      null: false
@@ -77,7 +85,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.datetime "updated_at"
   end
 
-  add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true
+  add_index "oauth_applications", ["uid"], name: "index_oauth_applications_on_uid", unique: true, using: :btree
 
   create_table "statuses", force: true do |t|
     t.text     "content"
@@ -88,7 +96,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.integer  "image_id"
   end
 
-  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
+  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id", using: :btree
 
   create_table "user_friendships", force: true do |t|
     t.integer  "user_id"
@@ -98,8 +106,8 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.string   "state"
   end
 
-  add_index "user_friendships", ["state"], name: "index_user_friendships_on_state"
-  add_index "user_friendships", ["user_id", "friend_id"], name: "index_user_friendships_on_user_id_and_friend_id"
+  add_index "user_friendships", ["state"], name: "index_user_friendships_on_state", using: :btree
+  add_index "user_friendships", ["user_id", "friend_id"], name: "index_user_friendships_on_user_id_and_friend_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -119,7 +127,7 @@ ActiveRecord::Schema.define(version: 20151216191012) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
