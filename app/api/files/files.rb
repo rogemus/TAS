@@ -61,4 +61,3 @@ module Files
 			end
 		end
 	end
-end
