@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115143508) do
+ActiveRecord::Schema.define(version: 20160116214426) do
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20160115143508) do
   end
 
   add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
+  create_table "messages", force: true do |t|
+    t.integer  "id_nadawcy"
+    t.integer  "id_odbiorcy"
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "oauth_access_grants", force: true do |t|
     t.integer  "resource_owner_id", null: false

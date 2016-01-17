@@ -2,13 +2,12 @@ TAS::Application.routes.draw do
   get 'profiles/show'
 
   use_doorkeeper
-
   mount Statuses::StatusesController => '/api'
   mount Users::UsersController => '/api'
   mount Friendships::FriendshipsController => '/api'
+  mount Comments::CommentsController => '/api'
   mount Files::FilesController => '/'
   mount Attachments::AttachmentsController => '/'
-  mount Comments::CommentsController => '/'
   mount Messages::MessagesController => '/'
 
   as :user do
