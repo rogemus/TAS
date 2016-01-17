@@ -59,22 +59,21 @@ module Comments
           end
 
           #Pobiera tylko kometarz o danym id
+          # curl -X GET http://localhost:3000/api/v1/comments/get_comments_for_post/<id posta>
           resource :get_comments_for_post do
             desc 'Wyswietlanie kometarza do posta'
             #oauth2
             params do
-              requires :post_id, type: Integer, desc: 'Id komentarza'
+              requires :post_id, type: Integer, desc: 'Id posta'
             end
             get ':post_id' do
-              Comment.find(params[:post_id])
+              Comment.where(params[:post_id])
             end
           end
 
-          #nie działa
-          #curl -v -H "Content-Type: application/json" -H 'Authorization: Bearer <token>' 
+          #curl -v -H "Content-Type: application/json" -H 'Authorization: Bearer <token>'
           #-d '{"comment":"zaktualizowany komenatrz"}'
           #-X PUT http://localhost:3000/api/v1/comments/update_comment/<id komentarza>
-
           resource :update_comment do
             desc 'Edytowanie komentarza'
             oauth2
