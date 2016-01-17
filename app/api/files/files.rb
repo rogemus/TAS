@@ -6,18 +6,16 @@ module Files
 		formatter :json, Grape::Formatter::ActiveModelSerializers
 		use ::WineBouncer::OAuth2
 
-		rescue_from WineBouncer::Errors::OAuthUnauthorizedError do |e|
-			error!({ error: e.message }, 401)
-		end
+		default_error_status 400
 
 		helpers do
-			# Find the user that owns the access token
-  			def current_resource_owner
-    			User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
-  			end
+		# Find the user that owns the access token
+			def current_resource_owner
+				User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+			end
 		end
 
-		resource :images
+		resource :images do
 			desc 'Dodawanie obrazu'
 			resource :upload_image do
 				oauth2
@@ -36,6 +34,19 @@ module Files
 					image.save
 				end
 			end
+			
+			resource :show_all_img_for_user do
+				desc 'Pokaz wszystkie obrazy dodane przez uzytkownika'
+				#oauth2
+				params do
+					requires :user_id, type: Integer, desc: 'User id'
+				end
+				
+				get ':user_id' do
+					Image.where(params[:user_id])
+				end
+			end
+	
 			resource :delete_image do
 				desc 'Usuwanie obrazu po po konkretnym id'
 				oauth2
@@ -47,17 +58,6 @@ module Files
 					Image.find(params[:id]).destroy
 				end
 			end
-			
-			resource :show_all_img_for_user do
-				desc 'Pokaz wszystkie obrazy dodane przez uzytkownika'
-				oauth2
-				params do
-					requires :user_id, type: Integer, desc: 'User id'
-				end
-				
-				get ':user_id' do
-					Image.where(params[:user_id])
-				end
-			end
 		end
 	end
+end

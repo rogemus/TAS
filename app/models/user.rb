@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
                   :first_name, :last_name, :profile_name, :full_name, :id
   # attr_accessible :title, :body
   has_many :statuses
+  has_many :images
 
   validates :first_name, presence: true
 
@@ -25,14 +26,14 @@ class User < ActiveRecord::Base
   end
 
   def to_param
-    profile_name    
+    profile_name
   end
 
   has_many :statuses
   has_many :user_friendships
   has_many :friends, -> { where(user_friendships: { state: 'accepted'}) }, through: :user_friendships
   
-  has_many :pending_user_friendships, -> { where(user_friendships: {state: 'pending'})}, class_name: 'UserFriendship', 
+  has_many :pending_user_friendships, -> { where(user_friendships: {state: 'pending'})}, class_name: 'UserFriendship',
                                       foreign_key: :user_id
                                   
   has_many :pending_friends, through: :pending_user_friendships, source: :friend
@@ -40,7 +41,7 @@ class User < ActiveRecord::Base
   def gravatar_url
     stripped_email = email.strip
     downcased_email = stripped_email.downcase
-    hash = Digest::MD5.hexdigest(downcased_email)  
+    hash = Digest::MD5.hexdigest(downcased_email)
 
     "http://gravatar.com/avatar/#{hash}"
   end
