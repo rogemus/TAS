@@ -16,6 +16,7 @@ module Files
 		end
 
 		resource :images do
+			# curl -H 'Authorization: Bearer <token>' -F avatar=@ <zdjęcie> -X POST http://localhost:3000/api/v1/images/upload_image
 			desc 'Dodawanie obrazu'
 			resource :upload_image do
 				oauth2
@@ -35,6 +36,7 @@ module Files
 				end
 			end
 			
+			# curl -H 'Authorization: Bearer <token>' -F avatar=@ <zdjęcie> -X POST http://localhost:3000/api/v1/images/show_all_img_for_user/<id uzytkownika>
 			resource :show_all_img_for_user do
 				desc 'Pokaz wszystkie obrazy dodane przez uzytkownika'
 				#oauth2
@@ -46,7 +48,7 @@ module Files
 					Image.where(params[:user_id])
 				end
 			end
-	
+			# curl -H 'Authorization: Bearer <token>' -F avatar=@ <zdjęcie> -X POST http://localhost:3000/api/v1/images/delete_image/<id>
 			resource :delete_image do
 				desc 'Usuwanie obrazu po po konkretnym id'
 				oauth2
