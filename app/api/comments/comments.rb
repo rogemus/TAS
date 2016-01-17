@@ -78,11 +78,16 @@ module Comments
             desc 'Edytowanie komentarza'
             oauth2
             params do
-              requires :post_id, type: Integer, desc: 'Id komentarza'
+              requires :id, type: Integer, desc: 'Id komentarza'
               requires :comment, type: String, desc: 'Komentarz'
             end
-            put ':post_id' do
-              Comment.find(params[:post_id]).comment = params[:comment]
+            put ':id' do
+              Comment.find(params[:id]).update!({
+                author_id: resource_owner.id,
+                post_id: params[:id],
+                comment: params[:comment]
+                })
+
             end
           end
 
