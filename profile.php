@@ -11,7 +11,7 @@ require_once 'actions/REST.php';
 require_once 'actions/Smarty.php';
 require_once 'actions/infoController.php';
 
-$user_id = $_GET[user_id];
+$user_id = $_GET['user_id'];
 
 $rest = new REST();
 $result = null;

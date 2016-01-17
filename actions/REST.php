@@ -52,4 +52,22 @@ class REST{
 
         return $this->Execute();
     }
+    public function DELETE( $method ) {
+        curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
+
+        curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, "DELETE");
+
+        return $this->Execute();
+    }
+
+    public function PUT( $method, $data ) {
+        $data = json_encode($data);
+
+        curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
+
+        curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, "PUT");
+        curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
+
+        return $this->Execute();
+    }
 }
