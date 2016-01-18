@@ -3,14 +3,14 @@ html, body {
   padding: 0px;
 }
 
-main:before, main:after {
+.comments-box ul.comments li header.comment-header:before, main:before, .comments-box ul.comments li header.comment-header:after, main:after {
   content: " ";
   display: table;
 }
-main:after {
+.comments-box ul.comments li header.comment-header:after, main:after {
   clear: both;
 }
-main {
+.comments-box ul.comments li header.comment-header, main {
   *zoom: 1;
 }
 
@@ -84,7 +84,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   overflow-y: auto;
 }
 #menu a {
-  color: #F5F5F5;
+  color: #ecf0f1;
   border: none;
   padding: 0.6em 0 0.6em 0.6em;
 }
@@ -95,7 +95,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 #menu .pure-menu .pure-menu-heading {
   padding: 18px 0;
   background: #1784C7;
-  color: #F5F5F5;
+  color: #ecf0f1;
   text-transform: none;
   text-align: center;
 }
@@ -130,7 +130,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 #menu .pure-menu li a:hover, #menu .pure-menu li a:focus {
   padding-left: 12px;
   border-left: 3px solid #1784C7;
-  color: #F5F5F5;
+  color: #ecf0f1;
   box-shadow: 0 2px 5px 0 black;
   background: #2c3136;
 }
@@ -205,7 +205,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 .form-box header.logo h2 {
   font-family: inherit;
   font-weight: normal;
-  color: #F5F5F5;
+  color: #ecf0f1;
   margin: 0;
   padding: 20px 0;
 }
@@ -317,6 +317,82 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   height: auto;
 }
 
+.comments-box {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 100%;
+  background: #fff;
+}
+.comments-box .comments-footer {
+  border-top: 1px solid #FF7E66;
+  padding: 10px 20px;
+}
+.comments-box .comments-footer textarea {
+  display: block;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #1784C7;
+  padding: 10px;
+  width: 97%;
+}
+.comments-box .comments-footer div.add {
+  padding: 5px 0;
+  text-align: center;
+}
+.comments-box ul.comments {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+}
+.comments-box ul.comments li {
+  border: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  color: #1C1F22;
+  border-bottom: 1px solid #1784C7;
+}
+.comments-box ul.comments li:last-child {
+  border-bottom: none;
+}
+.comments-box ul.comments li:first-child {
+  border-top: 1px solid #FF7E66;
+}
+.comments-box ul.comments li a {
+  color: #1784C7;
+}
+.comments-box ul.comments li:nth-child(odd) {
+  background: #f2f5f5;
+}
+.comments-box ul.comments li header.comment-header {
+  padding: 5px 20px;
+}
+.comments-box ul.comments li header.comment-header .full_name {
+  float: left;
+  width: 50%;
+}
+.comments-box ul.comments li header.comment-header .full_name a {
+  font-size: 16px;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.comments-box ul.comments li header.comment-header .date {
+  padding: 5px 0;
+  vertical-align: middle;
+  text-align: right;
+  float: right;
+  width: 50%;
+  font-size: 10px;
+  font-size: 0.625rem;
+}
+.comments-box ul.comments li .comment-content p.text {
+  margin: 0px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
 .profile-page {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   margin: 0 auto;
@@ -329,7 +405,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   font-size: 1.125rem;
   text-align: center;
   padding: 10px 0;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid #cfd9db;
 }
 .profile-page .profile-info .full_name span {
   color: #1784C7;
@@ -379,7 +455,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 }
 .add-edit-post .post-footer .attachment-file, .add-edit-post .post-footer .attachment-img {
   padding: 10px 0;
-  border-bottom: 1px solid gainsboro;
+  border-bottom: 1px solid #cfd9db;
 }
 .add-edit-post .post-footer .attachment-file span, .add-edit-post .post-footer .attachment-img span {
   font-size: 14px;
@@ -431,11 +507,11 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 }
 
 main {
-  background: #d6d6d6;
+  background: #c9d4d7;
 }
 
 hr {
   border: 0;
   height: 1px;
-  background: #cfcfcf;
+  background: #c0cdd1;
 }
