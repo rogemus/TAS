@@ -33,7 +33,7 @@ main {
 
 header.top {
   position: fixed;
-  background: #2C3136;
+  background: #2c3136;
   width: 100%;
   padding-right: 40px;
   clear: both;
@@ -74,15 +74,13 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 
 #menu {
   margin-left: -200px;
-  /* "#menu" width */
   width: 200px;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   z-index: 1000;
-  /* so the menu or its navicon stays above all content */
-  background: #2C3136;
+  background: #2c3136;
   overflow-y: auto;
 }
 #menu a {
@@ -134,7 +132,7 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   border-left: 3px solid #1784C7;
   color: #F5F5F5;
   box-shadow: 0 2px 5px 0 black;
-  background: #2C3136;
+  background: #2c3136;
 }
 #menu .pure-menu li a:hover span, #menu .pure-menu li a:focus span {
   color: #1784C7;
@@ -433,7 +431,6 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 }
 
 main {
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   background: #d6d6d6;
 }
 

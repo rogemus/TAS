@@ -1,0 +1,31 @@
+//BASE
+@import 'base/setting'
+
+//HELPERS
+@import 'helpers/mixim'
+@import 'helpers/text'
+@import 'helpers/wrapper'
+@import 'helpers/color'
+
+//MODULE
+@import 'module/footer'
+@import 'module/header'
+@import 'module/middle'
+@import 'module/sidebar'
+@import 'module/form'
+@import 'module/single-post'
+
+//PAGE
+@import 'page/profile-page'
+@import 'page/add-edit-post-page'
+@import 'page/friend-list'
+
+main
+  @extend %clearfix
+  //font-family: $open-sans
+  background: darken($white, 12)
+
+hr
+  border: 0
+  height: 1px
+  background: darken($white, 15)

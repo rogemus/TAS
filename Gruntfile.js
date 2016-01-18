@@ -19,7 +19,7 @@ module.exports = function(grunt) {
         options: {
           style: "expanded",
         },
-        src: "src/sass/main.scss",
+        src: "src/sass/main.sass",
         dest: "src/css/style.css"
       }
     },
@@ -90,7 +90,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: [
-        "src/sass/**/*.scss",
+        "src/sass/**/*.sass",
         "src/jade/**/*.jade",
         "src/jade/*.jade"
       ],

@@ -1,0 +1,32 @@
+$dark-blue: #2c3136
+header.top
+  position: fixed
+  background: $dark-blue
+  width: 100%
+  padding-right: 40px
+  clear: both
+  top: 0
+  z-index: 1000
+  .pure-menu-horizontal
+    .pure-menu-list
+      float: right
+      right: 250px
+      li.pure-menu-item
+        .thumbnail
+          padding: 0 10px
+          img
+            height: 30px
+            width: 30px
+            border-radius: 10px
+            vertical-align: middle
+            margin: 0 auto
+        .full_name
+          vertical-align: middle
+        a
+          padding: 13px 20px
+          &:hover,
+          &:focus
+            background: transparent
+        & .pure-menu-children
+          left: 75px
+          background: $black

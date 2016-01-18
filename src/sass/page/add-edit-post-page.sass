@@ -1,0 +1,33 @@
+.add-edit-post
+  font-family: $open-sans
+  .post-box
+    margin: 0 auto
+  .post-content
+    padding: 15px
+  .post-l-wide
+    width: 600px
+  .post-main
+    margin: 15px auto
+    textarea
+      width: 96%
+      height: 150px
+      border-radius: 5px
+      border: 1px solid $blue
+      padding: 10px
+  .post-footer
+    margin: 15px auto
+    input[type="file"]
+      padding: 10px 0
+    .attachment-file, .attachment-img
+      padding: 10px 0
+      border-bottom: 1px solid darken($white, 10)
+      & span
+        +font-size($font-minor)
+        color: $black
+        display: block 
+    .post-submit
+      padding: 10px
+      input
+        display: block
+        width: 150px
+        margin: 0 auto
