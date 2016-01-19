@@ -42,7 +42,7 @@ module Comments
           params do
             requires :id, type: Integer, desc: 'Id komentarza'
           end
-          get ':id' do
+          get ':id', root: false, each_serializer: CommentsSerializer do
             Comment.find(params[:id])
           end
 
@@ -66,7 +66,7 @@ module Comments
             params do
               requires :post_id, type: Integer, desc: 'Id posta'
             end
-            get ':post_id' do
+            get ':post_id', root: false, each_serializer: CommentsSerializer do
               Comment.where(params[:post_id])
             end
           end
