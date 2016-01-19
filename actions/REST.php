@@ -34,6 +34,8 @@ class REST{
         curl_setopt($this->curl, CURLOPT_HTTPHEADER, $options);
     }
 
+
+
     public function POST( $method, $data ){
         $data = json_encode($data);
 

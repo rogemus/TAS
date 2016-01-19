@@ -28,9 +28,12 @@
                                         </div>
                                     </div>
                                 </header>
+                                {if $status->image != "" || $status->image != null }
                                 <div class="post-img">
-                                    <img src="http://placehold.it/900x400/1D7E42/FFFFFF" alt="" class="pure-img">
+                                    <img src="http://localhost:3000/{$status->image->img}" alt="" class="pure-img">
                                 </div>
+                                {/if}
+
                                 <div class="post-main">
                                     <p>
                                         {$status->content}

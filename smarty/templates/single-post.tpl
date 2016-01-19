@@ -29,15 +29,23 @@
                                             </div>
                                         </div>
                                     </header>
+
+                                    {if $single_status_image != null}
                                     <div class="post-img">
-                                        <img src="http://placehold.it/900x400/1D7E42/FFFFFF" alt=""
-                                             class="pure-img">
+                                        <img src="http://localhost:3000/{$single_status_image}" alt="" class="pure-img">
                                     </div>
+                                    {/if}
+
+
                                     <div class="post-main">
                                         <p>
                                             {$single_status_content}
                                         </p>
                                     </div>
+                                    <footer class="post-footer">
+                                        {include file='module/comments.tpl'}
+                                    </footer>
+
                                 </div>
                             </div>
                         </article>
@@ -47,7 +55,7 @@
 
         </div>
     </div>
-{if isset($smarty.session.token)}
+    {if isset($smarty.session.token)}
 </div>
 {/if}
 {include file='module/footer.tpl'}

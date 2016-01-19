@@ -8,8 +8,8 @@
 
 require_once 'REST.php';
 
-define('APP_ID', '3427427c3c4c02e45a446c0dbef028662ea69752365e480b03ff85cd001fd879');
-define('SECRET', 'dbc7556973a022c7d29f7de57eb969c6f2b653b416189e84aed3b05dfb65ca4e');
+define('APP_ID', 'd2132e6db96d110b3eb68a368211933500efbd819abcf4ff652e63abaa335648');
+define('SECRET', 'd39ed914f8dad145833d51ee86492a182519c58769c1d95e17a4c249d0261812');
 
 session_start();
 

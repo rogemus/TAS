@@ -22,11 +22,10 @@
                                                         <input type="file" name="attachment-file" class="pure-input-1">
                                                     </div>
                                                     <div class="pure-u-5-5 attachment-img"><span>Add img to post</span>
-                                                        <input type="file" name="attachment-img" class="pure-input-1">
+                                                        <input type="file" name="attachment-img" id="attachment-img" class="pure-input-1">
                                                     </div>
                                                     <div class="pure-u-5-5 post-submit">
-                                                        <input type="submit" value="Submit"
-                                                               class="pure-button pure-input-1 pure-button-primary">
+                                                        <input type="submit" value="Submit" class="pure-button pure-input-1 pure-button-primary">
                                                     </div>
                                                 </div>
                                             </div>

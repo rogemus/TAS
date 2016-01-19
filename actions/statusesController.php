@@ -23,7 +23,9 @@ if (isset($_SESSION['token'])) {
     $result = $rest->GET('api/v1/statuses/feed');
     $x = json_encode($result);
     $smarty->assign('statuses', $x);
+
 } else {
     //w przeciwnym wypadku
 }
+
 
