@@ -15,20 +15,25 @@ $rest_file->AddOptions(array(
     'Authorization: Bearer ' . $_SESSION['token']
 ));
 
-$rest_file->POST('api/v1/images/upload_image', array(
-        'avatar' => $_POST['attachment-img'])
-);
 
 
-$rest = new REST();
-$rest->AddOptions(array(
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $_SESSION['token']
-));
-$rest->POST('api/v1/statuses/new', array(
-        'content' => $_POST['content'])
-);
+//
+//$rest_file->POST('api/v1/images/upload_image', array(
+//        'avatar' => '@' . $_FILES['attachment-img']['tmp_name']
+//                        . ';filename=' . $_FILES['attachment-img']['name'])
+//);
+//
+//var_dump($_FILES['attachment-img']);
 
-header('Location: ../index.php');
+//$rest = new REST();
+//$rest->AddOptions(array(
+//    'Content-Type: application/json',
+//    'Authorization: Bearer ' . $_SESSION['token']
+//));
+//$rest->POST('api/v1/statuses/new', array(
+//        'content' => $_POST['content'])
+//);
+
+//header('Location: ../index.php');
 
 //# curl -H 'Authorization: Bearer <token>' -F avatar=@ <zdjęcie> -X POST http://localhost:3000/api/v1/images/upload_image

@@ -5,7 +5,7 @@
         {foreach from=$comments|json_decode item=comment}
         <li>
            <div class="comment-header">
-                <div class="full_name"><a href="">{$comment->id}</a></div>
+                <div class="full_name"><a href="">{$comment->user->full_name}</a></div>
                 <div class="date">{$comment->created_at|date_format:"%e %b %Y"}</div>
             </div>
             <div class="comment-content">

@@ -44,7 +44,7 @@ $rest2 = new REST();
 $result2 = null;
 $y = null;
 $result2 = $rest2->GET('/api/v1/comments/get_comments_for_post/' . $status_id . '');
-$y = json_encode($result2->get_comments_for_post);
+$y = json_encode($result2);
 
 
 $smarty->assign('comments', $y);
