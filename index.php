@@ -10,6 +10,7 @@
 
 session_start();
 require_once 'actions/REST.php';
+require 'vendor/autoload.php';
 require_once 'actions/Smarty.php';
 require_once 'actions/infoController.php';
 require_once 'actions/statusesController.php';

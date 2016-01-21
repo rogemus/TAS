@@ -1,0 +1,7 @@
+{
+    "name": "pawe/tas-client",
+    "require": {
+        "smarty/smarty": "~3.1",
+        "guzzlehttp/guzzle": "~6.0"
+    }
+}
