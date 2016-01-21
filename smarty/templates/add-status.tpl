@@ -17,7 +17,7 @@
                                         <div class="post-footer">
                                             <div class="post-attachment">
                                                 <div class="pure-g">
-                                                    <div class="pure-u-5-5 attachment-file">
+                                                    <div class="pure-u-5-5 attachment-file" enctype="multipart/form-data">
                                                         <span>Add file to post</span>
                                                         <input type="file" name="attachment-file" class="pure-input-1">
                                                     </div>

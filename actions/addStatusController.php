@@ -11,19 +11,17 @@ session_start();
 
 $rest_file = new REST();
 $rest_file->AddOptions(array(
-    'Content-Type:multipart/form-data',
+    'Content-Type: application/json',
     'Authorization: Bearer ' . $_SESSION['token']
 ));
 
+$img = json_encode($_FILES['attachment-img']);
 
+$rest_file->POST('api/v1/images/upload_image', array(
+        'avatar' => $img)
+);
+var_dump($img);
 
-//
-//$rest_file->POST('api/v1/images/upload_image', array(
-//        'avatar' => '@' . $_FILES['attachment-img']['tmp_name']
-//                        . ';filename=' . $_FILES['attachment-img']['name'])
-//);
-//
-//var_dump($_FILES['attachment-img']);
 
 //$rest = new REST();
 //$rest->AddOptions(array(
