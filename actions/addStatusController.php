@@ -16,7 +16,7 @@ $rest_file->AddOptions(array(
 ));
 
 
-$rest_file->POST('api/v1/images/upload_image', array(
+$rest_file->POST_FILE('api/v1/images/upload_image', array(
         'avatar' => '@' .$_FILES['attachment-img']['tmp_name']
                        . ';filename=' . $_FILES['attachment-img']['name'])
 );
