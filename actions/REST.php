@@ -36,6 +36,15 @@ class REST{
 
 
 
+    public function POST_FILE( $method, $data ){
+        curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
+        curl_setopt($this->curl, CURLOPT_POST, 1);
+        curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
+
+        return $this->Execute();
+    }
+
+
     public function POST( $method, $data ){
         $data = json_encode($data);
 
@@ -46,6 +55,7 @@ class REST{
 
         return $this->Execute();
     }
+
 
     public function GET( $method ){
         curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
