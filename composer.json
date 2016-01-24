@@ -1,0 +1,6 @@
+{
+    "name": "kacper/tas-client",
+    "require": {
+        "smarty/smarty": "~3.1"
+    }
+}

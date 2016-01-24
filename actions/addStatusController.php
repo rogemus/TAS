@@ -8,7 +8,8 @@
 require_once 'REST.php';
 
 session_start();
-
+//$http= new \GuzzleHttp\Client();
+//https://www.youtube.com/watch?v=io_r-0e3Qcw
 $rest_file = new REST();
 $rest_file->AddOptions(array(
     "Content-Disposition: form-data; name=\"avatar\"; filename=\"{$_FILES['avatar']['name']}\"",
