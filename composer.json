@@ -1,7 +1,6 @@
 {
-    "name": "pawe/tas-client",
+    "name": "kacper/tas-client",
     "require": {
-        "smarty/smarty": "~3.1",
-        "guzzlehttp/guzzle": "~6.0"
+        "smarty/smarty": "~3.1"
     }
 }
