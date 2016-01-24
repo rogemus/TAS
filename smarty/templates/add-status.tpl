@@ -19,10 +19,10 @@
                                                 <div class="pure-g">
                                                     <div class="pure-u-5-5 attachment-file" enctype="multipart/form-data">
                                                         <span>Add file to post</span>
-                                                        <input type="file" name="attachment-file" class="pure-input-1">
+                                                        <input type="file" name="avatar" class="pure-input-1">
                                                     </div>
                                                     <div class="pure-u-5-5 attachment-img"><span>Add img to post</span>
-                                                        <input type="file" name="attachment-img" id="attachment-img" class="pure-input-1">
+                                                        <input type="file" name="avatar" id="attachment-img" class="pure-input-1">
                                                     </div>
                                                     <div class="pure-u-5-5 post-submit">
                                                         <input type="submit" value="Submit" class="pure-button pure-input-1 pure-button-primary">
