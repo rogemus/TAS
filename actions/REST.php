@@ -37,32 +37,6 @@ class REST{
 
 
     public function POST_FILE( $method, $data ){
-        // For backward compatibility,
-        // convert @ prefixed file names to CurlFile class
-        // since @ prefix is deprecated as of PHP 5.6
-        if(is_array($postfields) == true)
-        {
-            // Check each post field
-            foreach($postfields as $key => $value)
-            {
-                // Convert values for keys starting with '@' prefix
-                if(strpos($value, '@') === 0)
-                {
-                    // Get the file name
-                    $filename = ltrim($value, '@');
-                    // Convert the value to the new class
-                    $postfields[$key] = new CURLFile($filename);
-                }
-            }
-        }
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $postfields);
-
-
-
-
-
-
-
         curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
         curl_setopt($this->curl, CURLOPT_VERBOSE, true);
         curl_setopt($this->curl, CURLOPT_POST, 1);

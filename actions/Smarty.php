@@ -6,7 +6,7 @@
  * Time: 15:03
  */
 //require('../vendor/smarty/smarty/libs/Smarty.class.php');
-
+require('Smarty.class.php');
 
 // load Smarty library
 
