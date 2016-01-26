@@ -27,3 +27,6 @@ $rest_file->POST_FILE('api/v1/images/upload_image', array(
 );
 
 //echo '@' .$_FILES['avatar']['tmp_name']. ';filename="' . $_FILES['avatar']['name'].'"';
+
+//#curl -H "Content-Type:multipart/form-data" -H 'Authorization: Bearer c5ed43f5332fa217770ef287b49cf4a1e552cca2b77a25442296a5b81107bfbc'
+//# -F avatar=@C:/Users/Kacper/Desktop/wow.jpg http://localhost:3000/api/v1/images/upload_image
