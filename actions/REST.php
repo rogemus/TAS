@@ -38,7 +38,7 @@ class REST{
 
     public function POST_FILE( $method, $data ){
         curl_setopt($this->curl, CURLOPT_URL, self::API_URL.$method );
-        curl_setopt($this->curl, CURLOPT_VERBOSE, true);
+
         curl_setopt($this->curl, CURLOPT_POST, 1);
         curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);
 
