@@ -35,15 +35,15 @@ module Files
 					image.save
 				end
 			end
-			
-			# curl -H 'Authorization: Bearer <token>' -F avatar=@ <zdjęcie> -X POST http://localhost:3000/api/v1/images/show_all_img_for_user/<id uzytkownika>
+
+			# curl -H 'Authorization: Bearer <token>'  -X GET http://localhost:3000/api/v1/images/show_all_img_for_user/<id uzytkownika>
 			resource :show_all_img_for_user do
 				desc 'Pokaz wszystkie obrazy dodane przez uzytkownika'
 				#oauth2
 				params do
 					requires :user_id, type: Integer, desc: 'User id'
 				end
-				
+
 				get ':user_id' do
 					Image.where(params[:user_id])
 				end
