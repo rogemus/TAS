@@ -26,6 +26,9 @@
         </div>
     </div>
 </div>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 <script>
     $(document).ready( function () {
         $('#login-form').validate();

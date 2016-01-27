@@ -29,7 +29,7 @@ $image_id = json_decode($request->getBody());
 
 $request = $client->request('POST', '/api/v1/statuses/new', [
     'json' => [
-        'content' => 'test',
+        'content' => $_POST['content'],
         'image_id' => $image_id
     ],
     'headers' => [
