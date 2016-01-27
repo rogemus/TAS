@@ -3,14 +3,14 @@ html, body {
   padding: 0px;
 }
 
-.comments-box ul.comments li header.comment-header:before, main:before, .comments-box ul.comments li header.comment-header:after, main:after {
+.comments-box ul.comments li .comment-header:before, main:before, .comments-box ul.comments li .comment-header:after, main:after {
   content: " ";
   display: table;
 }
-.comments-box ul.comments li header.comment-header:after, main:after {
+.comments-box ul.comments li .comment-header:after, main:after {
   clear: both;
 }
-.comments-box ul.comments li header.comment-header, main {
+.comments-box ul.comments li .comment-header, main {
   *zoom: 1;
 }
 
@@ -316,6 +316,13 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   max-width: 100%;
   height: auto;
 }
+.post-box article.post .post-content .post-footer .attachment {
+  padding: 15px 10px;
+  border-top: 1px solid #cfd9db;
+}
+.post-box article.post .post-content .post-footer .attachment a span {
+  padding: 0 10px;
+}
 
 .comments-box {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -365,19 +372,19 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
 .comments-box ul.comments li:nth-child(odd) {
   background: #f2f5f5;
 }
-.comments-box ul.comments li header.comment-header {
+.comments-box ul.comments li .comment-header {
   padding: 5px 20px;
 }
-.comments-box ul.comments li header.comment-header .full_name {
+.comments-box ul.comments li .comment-header .full_name {
   float: left;
   width: 50%;
 }
-.comments-box ul.comments li header.comment-header .full_name a {
+.comments-box ul.comments li .comment-header .full_name a {
   font-size: 16px;
   font-size: 1rem;
   text-decoration: none;
 }
-.comments-box ul.comments li header.comment-header .date {
+.comments-box ul.comments li .comment-header .date {
   padding: 5px 0;
   vertical-align: middle;
   text-align: right;
