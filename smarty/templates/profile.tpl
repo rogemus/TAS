@@ -3,7 +3,7 @@
     {include file='module/sidebar.tpl'}
     {include file='module/top-menu.tpl'}
 
-
+    {nocache}
     <div id="main">
         <div class="wrapper">
             <div class="header"></div>
@@ -79,8 +79,7 @@
                 </div>
             </div>
         </div>
+        {/nocache}
     </div>
-
-
     <script src="assets/js/scripts.js"></script>
     {include file='module/footer.tpl'}

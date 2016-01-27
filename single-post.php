@@ -56,5 +56,12 @@ $response2 = $client->request('GET', '/api/v1/comments/get_comments_for_post/' .
 ]);
 $comments = (object) json_decode($response2->getBody());
 $smarty->assign('comments', $comments);
-$smarty->display('single-post.tpl');
+
+if ( isset($_SESSION['token']) ) {
+    $smarty->display('single-post.tpl');
+} else {
+    $smarty->display('login.tpl');
+}
+
+
 
