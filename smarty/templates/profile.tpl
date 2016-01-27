@@ -40,7 +40,7 @@
                     </div>
                     <div class="pure-u-4-5">
                         <div class="grid2">
-                            {foreach from=$statuses item=status}
+                            {foreach item=status from=$statuses}
                             {if $status->user->id == $status_id}
                             <div class="post-box grid-item2">
                                 <article class="post">

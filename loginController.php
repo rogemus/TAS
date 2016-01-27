@@ -6,13 +6,14 @@
  * Time: 22:24
  */
 require_once 'vendor/autoload.php';
+require 'Smarty.php';
 require_once 'guzzle.php';
 define('APP_ID', 'd2132e6db96d110b3eb68a368211933500efbd819abcf4ff652e63abaa335648');
 define('SECRET', 'd39ed914f8dad145833d51ee86492a182519c58769c1d95e17a4c249d0261812');
 
 
 session_start();
-if ( isset($_SESSION['token']) ) {
+if (isset($_SESSION['token'])) {
     $smarty->display('index.tpl');
 } else {
     $smarty->display('login.tpl');
@@ -30,7 +31,9 @@ $request = $client->request('POST', '/oauth/token', array(
 ));
 
 $token = json_decode($request->getBody());
-(isset($token->access_token)) ? $_SESSION['token'] = $token->access_token : die();
+( isset($token->access_token) ) ? $_SESSION['token'] = $token->access_token : die();
 
-header('Location: login.php');
+header('Location: ../index.php');
+
+
 

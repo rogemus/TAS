@@ -1,5 +1,5 @@
 {include file='module/header.tpl'}
-
+{nocache}
 <div id="main">
     <div class="wrapper">
         <div class="header"></div>
@@ -26,4 +26,5 @@
         </div>
     </div>
 </div>
+{/nocache}
 {include file='module/footer.tpl'}

@@ -1,4 +1,5 @@
 {include file='module/header.tpl'}
+{nocache}
 <div id="main">
     <div class="wrapper">
         <div class="header"></div>
@@ -8,7 +9,7 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" name="registration_form" action="actions/registrationController.php"
+                <form class="pure-form pure-form-stacked" name="registration_form" action="registrationController.php"
                       method="post">
                     <fieldset>
                         <p>
@@ -42,4 +43,5 @@
         </div>
     </div>
 </div>
+{/nocache}
 {include file='module/footer.tpl'}
