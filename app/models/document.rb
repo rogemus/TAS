@@ -1,9 +1,6 @@
 class Document < ActiveRecord::Base
-
   attr_accessible :attachment, :remove_attachment, :attachment_path
   has_attached_file :attachment
-
-
 
   attr_accessor :remove_attachment
 

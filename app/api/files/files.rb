@@ -1,4 +1,3 @@
-# in /app/main/api.rb
 module Files
 	class FilesController < Grape::API
 		version 'v1', using: :path

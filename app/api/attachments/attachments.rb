@@ -5,16 +5,13 @@ module Attachments
   		format :json
   		formatter :json, Grape::Formatter::ActiveModelSerializers
   		use ::WineBouncer::OAuth2
-  
   		default_error_status 400
-  
   		helpers do
-  		# Find the user that owns the access token
   			def current_resource_owner
   				User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
   			end
   		end
-        #curl -H 'Authorization: Bearer <token>' -F file=@<full_file_path> -X POST http://localhost:3000/api/upload_document
+        #curl -H 'Authorization: Bearer <token>' -F file=@<full_file_path> -X POST http://localhost:3000/api/v1/files/upload_document
       resource :files do
         resource :upload_document do
           oauth2
@@ -38,7 +35,7 @@ module Attachments
                 end
             end
         end
-        # curl -H 'Authorization: Bearer <token>' -X DELETE http://localhost:3000/api/delete_document/<id>
+        # curl -H 'Authorization: Bearer <token>' -X DELETE http://localhost:3000/api/v1/files/delete_document/<id>
         resource :delete_document do
           oauth2
           params do
@@ -50,9 +47,7 @@ module Attachments
           end
         end
 
-        #curl -v -H 'Authorization: Bearer <token>' -X GET http://localhost:3000/api/show_all_documents_for_user/<user_id>
-
-
+        #curl -v -H 'Authorization: Bearer <token>' -X GET http://localhost:3000/api//v1/files/show_all_documents_for_user/<user_id>
         resource :show_all_documents_for_user do
           oauth2
           params do
@@ -61,12 +56,8 @@ module Attachments
 
           get ':user_id' do
             Document.where(params[:user_id])
-
           end
         end
-
-      
-      end
-      
-      end
+    end
+  end
 end

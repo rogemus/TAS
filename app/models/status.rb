@@ -8,7 +8,7 @@ class Status < ActiveRecord::Base
     accepts_nested_attributes_for :document
     accepts_nested_attributes_for :image
 
- 	validates :content, presence: true,
+    validates :content, presence: true,
                       length: { minimum: 2 }
 
 
