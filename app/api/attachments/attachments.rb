@@ -1,46 +1,41 @@
 # in /app/main/api.rb
 module Attachments
     class AttachmentsController < Grape::API
-        version 'v1', using: :header, vendor: 'some_vendor'
-        format :json
-        use ::WineBouncer::OAuth2
-
-
+      version 'v1', using: :path
+  		format :json
+  		formatter :json, Grape::Formatter::ActiveModelSerializers
+  		use ::WineBouncer::OAuth2
+  
+  		default_error_status 400
+  
+  		helpers do
+  		# Find the user that owns the access token
+  			def current_resource_owner
+  				User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+  			end
+  		end
         #curl -H 'Authorization: Bearer <token>' -F file=@<full_file_path> -X POST http://localhost:3000/api/upload_document
-
+      resource :files do
         resource :upload_document do
           oauth2
-          oauth2
             post do
-                # takes the :avatar value and assigns it to a variable
                 file = params[:file]
-
-
-                # the avatar parameter needs to be converted to a
-                # hash that paperclip understands as:
                 attachment = {
                     :filename => file[:filename],
                     :type => file[:type],
                     :headers => file[:head],
                     :tempfile => file[:tempfile],
                   }
-
-                # creates a new User object
                 pdf = Document.new
                 pdf.user_id = resource_owner.id
-
-                # This is the kind of File object Grape understands so let's
-                # pass the hash to it
                 pdf.attachment = ActionDispatch::Http::UploadedFile.new(attachment)
-
-                # easy
                 pdf.attachment_path = attachment[:filename]
-
-                # even easier
-                #user.name = "dummy name"
-
-                # and...
                 pdf.save
+                if pdf.save!
+                  render pdf.id
+                else
+                  #todo
+                end
             end
         end
         # curl -H 'Authorization: Bearer <token>' -X DELETE http://localhost:3000/api/delete_document/<id>
@@ -70,5 +65,8 @@ module Attachments
           end
         end
 
+      
+      end
+      
       end
 end

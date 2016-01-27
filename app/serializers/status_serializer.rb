@@ -3,4 +3,5 @@ class StatusSerializer < ActiveModel::Serializer
 
   has_one :user, serializer: UserShortSerializer
   has_one :image
+  has_one :document
 end
