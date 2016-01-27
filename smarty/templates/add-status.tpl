@@ -17,11 +17,11 @@
                                         <div class="post-footer">
                                             <div class="post-attachment">
                                                 <div class="pure-g">
-                                                    <div class="pure-u-5-5 attachment-img"><span>Add img to post</span>
+                                                    <div class="pure-u-5-5 attachment-img"><span>Add img to post (jpg|png|gif)</span>
                                                         <input type="file" name="avatar" id="avatar" class="pure-input-1">
                                                     </div>
                                                     
-                                                    <div class="pure-u-5-5 attachment-file"><span>Add attachment to post</span>
+                                                    <div class="pure-u-5-5 attachment-file"><span>Add attachment to post (pdf|doc|txt)</span>
                                                         <input type="file" name="file" id="file" class="pure-input-1">
                                                     </div>
                                                     
@@ -46,6 +46,10 @@
 
     <script>
       $(document).ready( function () {
+        $.validator.addMethod('filesize', function(value, element, param) {
+            return this.optional(element) || (element.files[0].size <= param)
+        }, 'File must less than 1MB'
+      );
         $( "#addStatus" ).validate({
           rules: {
             content:{
@@ -53,15 +57,14 @@
             },
             avatar: {
               required: false,
-              extension: "png|jpe?g|gif"
-            }
+              extension: "png|jpe?g|gif",
+              filesize: 1048576
+            },
             file: {
               required: false,
               extension: "txt|pdf|doc"
             }
-          }
-          
-          
+          },
           });
       });
     </script>
