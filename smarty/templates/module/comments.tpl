@@ -4,17 +4,18 @@
 
 
         {foreach from=$comments item=comment}
-
-            {if $comment->post_id == $smarty.get.status_id}
-                <li>
-                   <div class="comment-header">
-                        <div class="full_name"><a href="">{$comment->user->full_name}</a></div>
-                        <div class="date">{$comment->created_at|date_format:"%e %b %Y"}</div>
-                    </div>
-                    <div class="comment-content">
-                        <p class="text">{$comment->comment}</p>
-                    </div>
-                </li>
+            {if $comment->comment != null || $comment->comment != ""}
+                {if $comment->post_id == $smarty.get.status_id}
+                    <li>
+                       <div class="comment-header">
+                            <div class="full_name"><a href="">{$comment->user->full_name}</a></div>
+                            <div class="date">{$comment->created_at|date_format:"%e %b %Y"}</div>
+                        </div>
+                        <div class="comment-content">
+                            <p class="text">{$comment->comment}</p>
+                        </div>
+                    </li>
+                {/if}
             {/if}
         {/foreach}
     </ul>

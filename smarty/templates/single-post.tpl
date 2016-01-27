@@ -23,7 +23,7 @@
                                     <header class="post-header pure-g">
                                         <div class="pure-u-5-5">
                                             <div class="full_name">
-                                                <a href="">{$single_status_full_name}</a>
+                                                <a href="profile.php?user_id={$single_status_user_id}">{$single_status_full_name}</a>
                                             </div>
                                             <div class="date">
                                                 <a href="">{$single_status_created_at|date_format:"%e %b %Y"}</a>
@@ -44,8 +44,8 @@
                                         </p>
                                     </div>
                                     <div class="post-footer">
-                                        {if $status->document != "" || $status->document != null }
-                                        <div class="attachment"><a class="pure-button"><i class="fa fa-paperclip"> </i><span>Plik </span></a></div>
+                                        {if $single_status_file_path != "" }
+                                        <div class="attachment"><a class="pure-button" href="{$single_status_file_path}"><i class="fa fa-paperclip"> </i><span>{$single_status_file_name}</span></a></div>
                                         {/if}
                                         {include file='module/comments.tpl'}
                                     </div>

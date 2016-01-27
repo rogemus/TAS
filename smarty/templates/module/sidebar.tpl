@@ -4,7 +4,7 @@
             <li class="pure-menu-item"><a href="images.php" class="pure-menu-link"><span><i class="fa fa-picture-o"></i></span> Images</a>
             <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span><i class="fa fa-files-o"></i></span> Files</a></li>
             </li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link"><span><i class="fa fa-users"></i></span> Friends</a></li>
+            <!--<li class="pure-menu-item"><a href="#" class="pure-menu-link"><span><i class="fa fa-users"></i></span> Friends</a></li>-->
         </ul>
         <div class="add-post">
             <h2>How are you ?</h2>
