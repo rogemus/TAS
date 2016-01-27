@@ -33,6 +33,11 @@ module Files
 					image.img = ActionDispatch::Http::UploadedFile.new(attachment)
 					image.image_path = attachment[:filename]
 					image.save
+          if image.save!
+            render image.id
+          else
+            #todo
+          end
 				end
 			end
 			
