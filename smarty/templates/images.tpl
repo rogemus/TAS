@@ -9,6 +9,8 @@
             <div class="header"></div>
             <div class="grid">
                 {foreach from=$statuses item=status}
+
+                {if $status->image != "" || $status->image != null }
                 <div class="post-box grid-item">
                     <article class="post">
                         <div class="shadow">
@@ -48,6 +50,7 @@
                         </div>
                     </article>
                 </div>
+                {/if}
                 {/foreach}
             </div>
         </div>

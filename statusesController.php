@@ -20,6 +20,7 @@ if ( isset($_SESSION['token']) ) {
 
 
 
+
     $statuses = (object) json_decode($response->getBody());
     $smarty->assign('statuses', $statuses);
 } else {

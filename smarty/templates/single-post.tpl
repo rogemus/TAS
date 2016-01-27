@@ -44,8 +44,9 @@
                                         </p>
                                     </div>
                                     <div class="post-footer">
+                                        {if $status->document != "" || $status->document != null }
                                         <div class="attachment"><a class="pure-button"><i class="fa fa-paperclip"> </i><span>Plik </span></a></div>
-
+                                        {/if}
                                         {include file='module/comments.tpl'}
                                     </div>
 
