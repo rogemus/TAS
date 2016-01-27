@@ -23,7 +23,6 @@ $request = $client->request('POST', '/api/v1/users/sign_up', [
         ],
         'headers' => [
             'Content-type' => 'application/json',
-            'Authorization' => 'Bearer ' . $aut
         ],
     ]
 );

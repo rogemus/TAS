@@ -9,32 +9,33 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" name="registration_form" action="registrationController.php"
-                      method="post">
+                <form id="signup" class="pure-form pure-form-stacked" name="registration_form"
+                      action="registrationController.php" method="post">
                     <fieldset>
                         <p>
                             <label for="first_name">First Name</label>
-                            <input id="first_name" type="text" placeholder="First Name" name="first_name">
+                            <input id="first_name" type="text" placeholder="First Name" name="first_name" class="required">
                         </p>
                         <p>
                             <label for="last_name">Last Name</label>
-                            <input id="last_name" type="text" placeholder="Last Name" name="last_name">
+                            <input id="last_name" type="text" placeholder="Last Name" name="last_name" class="required">
                         </p>
                         <p>
                             <label for="profile_name">Profile Name</label>
-                            <input id="profile_name" type="text" placeholder="Profile Name" name="profile_name">
+                            <input id="profile_name" type="text" placeholder="Profile Name" name="profile_name" class="required">
                         </p>
                         <p>
                             <label for="email">E-mail</label>
-                            <input id="email" type="email" placeholder="E-mail" name="email">
+                            <input id="email" type="email" placeholder="E-mail" name="email" class="required">
                         </p>
                         <p>
                             <label for="password">Password</label>
-                            <input id="password" name="password" type="password" placeholder="Password">
+                            <input id="password" name="password" type="password" placeholder="Password" class="required">
                         </p>
                         <p>
                             <label for="password_confirmation">Password Confirmation</label>
-                            <input id="password_confirmation" name="password_confirmation" type="password" placeholder="Password Confirmation">
+                            <input id="password_confirmation" name="password_confirmation" type="password" class="required"
+                                   placeholder="Password Confirmation">
                         </p>
                         <input type="submit" class="pure-button pure-button-primary" value="Sign in">
                     </fieldset>
@@ -43,5 +44,10 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready( function () {
+        $('#signup').validate();
+    });
+</script>
 {/nocache}
 {include file='module/footer.tpl'}

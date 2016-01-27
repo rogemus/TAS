@@ -43,9 +43,11 @@
                                             {$single_status_content}
                                         </p>
                                     </div>
-                                    <footer class="post-footer">
+                                    <div class="post-footer">
+                                        <div class="attachment"><a class="pure-button"><i class="fa fa-paperclip"> </i><span>Plik </span></a></div>
+
                                         {include file='module/comments.tpl'}
-                                    </footer>
+                                    </div>
 
                                 </div>
                             </div>

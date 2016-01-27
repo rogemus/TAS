@@ -9,15 +9,15 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" action="loginController.php" method="post">
+                <form class="pure-form pure-form-stacked" action="loginController.php" method="post" id="login-form">
                     <fieldset>
                         <p>
                             <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="Email">
+                            <input id="email" name="email" type="email" placeholder="Email" class="required">
                         </p>
                         <p>
                             <label for="password">Password</label>
-                            <input id="password" name="password" type="password" placeholder="Password">
+                            <input id="password" name="password" type="password" placeholder="Password" class="required">
                         </p>
                         <input type="submit" class="pure-button pure-button-primary" value="Login">
                     </fieldset>
@@ -26,5 +26,10 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready( function () {
+        $('#login-form').validate();
+    });
+</script>
 {/nocache}
 {include file='module/footer.tpl'}

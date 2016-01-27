@@ -39,6 +39,9 @@
                                         {$status->content}
                                     </p>
                                 </div>
+                                <div class="post-footer">
+                                    <div class="attachment"><a class="pure-button"><i class="fa fa-paperclip"> </i><span>Plik </span></a></div>
+                                </div>
                             </div>
                         </div>
                     </article>
