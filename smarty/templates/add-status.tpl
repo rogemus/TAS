@@ -17,12 +17,16 @@
                                         <div class="post-footer">
                                             <div class="post-attachment">
                                                 <div class="pure-g">
-                                                    <div class="pure-u-5-5 attachment-img"><span>Add img to post (jpg|png|gif)</span>
+                                                    <div class="pure-u-5-5 attachment-img"><span>Add img to post ( jpg | png | gif )</span>
                                                         <input type="file" name="avatar" id="avatar" class="pure-input-1">
+                                                        <hr>
+                                                        <button onclick="reset($('#avatar'))" class="pure-button pure-input-1 button-error button-small">Reset file</button>
                                                     </div>
                                                     
-                                                    <div class="pure-u-5-5 attachment-file"><span>Add attachment to post (pdf|doc|txt)</span>
+                                                    <div class="pure-u-5-5 attachment-file"><span>Add attachment to post ( pdf | doc | txt )</span>
                                                         <input type="file" name="file" id="file" class="pure-input-1">
+                                                        <hr>
+                                                        <button onclick="reset($('#file'))" class="pure-button pure-input-1  button-error button-small">Reset file</button>
                                                     </div>
                                                     
                                                     <div class="pure-u-5-5 post-submit">
@@ -45,6 +49,13 @@
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
     <script>
+
+        window.reset = function (e) {
+            e.wrap('<form>').closest('form').get(0).reset();
+            e.unwrap();
+        }
+
+
       $(document).ready( function () {
         $.validator.addMethod('filesize', function(value, element, param) {
             return this.optional(element) || (element.files[0].size <= param)
@@ -62,7 +73,8 @@
             },
             file: {
               required: false,
-              extension: "txt|pdf|doc"
+              extension: "txt|pdf|doc",
+              filesize: 1048576
             }
           },
           });

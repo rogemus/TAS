@@ -17,7 +17,8 @@ session_start();
 
 $image_id = 0;
 $file_id = 0;
-if ($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0){
+
+if ($_FILES['file']['tmp_name'] != ""  ){
 
 
     $request = $client->request('POST', '/api/v1/files/upload_document', [
@@ -34,7 +35,7 @@ if ($_FILES['file']['size'] == 0 && $_FILES['file']['error'] == 0){
     ]);
     $file_id = json_decode($request->getBody());
 }
-if ($_FILES['avatar']['size'] == 0 && $_FILES['avatar']['error'] == 0) {
+if ($_FILES['avatar']['tmp_name'] != "") {
     $request = $client->request('POST', '/api/v1/images/upload_image', [
         'multipart' => [
             [
