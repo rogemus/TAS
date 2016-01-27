@@ -321,6 +321,8 @@ header.top .pure-menu-horizontal .pure-menu-list li.pure-menu-item .pure-menu-ch
   border-top: 1px solid #cfd9db;
 }
 .post-box article.post .post-content .post-footer .attachment a span {
+  font-size: 12px;
+  font-size: 0.75rem;
   padding: 0 10px;
 }
 
