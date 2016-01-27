@@ -60,7 +60,7 @@ class Smarty_Internal_Compile_Section extends Smarty_Internal_Compile_Private_Fo
      * @var array
      */
     public $nameProperties = array('first', 'last', 'index', 'iteration', 'show', 'total', 'rownum',
-                                          'index_prev', 'index_next');
+                                          'index_prev', 'index_next', 'loop');
 
     /**
      * {section} tag has no item properties
@@ -324,6 +324,9 @@ class Smarty_Internal_Compile_Section extends Smarty_Internal_Compile_Private_Fo
             }
         }
 
+        if (isset($namedAttr[ 'loop' ])) {
+            $initNamedProperty[ 'loop' ] = "'loop' => {$propValue['total']}";
+        }
         if (isset($namedAttr['total'])) {
             $initNamedProperty['total'] = "'total' => {$propValue['total']}";
             if ($propType['total'] > 0) {

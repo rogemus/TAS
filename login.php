@@ -2,16 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 13.12.2015
- * Time: 15:05
+ * Date: 26.01.2016
+ * Time: 22:28
  */
-
 session_start();
-require_once 'actions/REST.php';
-require_once 'actions/Smarty.php';
-//require_once 'actions/infoController.php';
-
-
+require_once 'Smarty.php';
 
 if ( isset($_SESSION['token']) ) {
     $smarty->display('index.tpl');

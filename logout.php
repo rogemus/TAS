@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 13.12.2015
- * Time: 21:49
+ * Date: 26.01.2016
+ * Time: 23:55
  */
 
 session_start();

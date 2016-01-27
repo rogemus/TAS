@@ -1,10 +1,11 @@
 {include file='module/header.tpl'}
-{if isset($smarty.session.token)}
+{if isset($smarty.session)}
 <div id="layout">
     {include file='module/sidebar.tpl'}
     {include file='module/top-menu.tpl'}
-    {/if}
+{/if}
 
+    {nocache}
     <div id="main">
         <div class="wrapper">
             <div class="header"></div>
@@ -55,7 +56,8 @@
 
         </div>
     </div>
-    {if isset($smarty.session.token)}
+    {/nocache}
+    {if isset($smarty.session)}
 </div>
 {/if}
 {include file='module/footer.tpl'}

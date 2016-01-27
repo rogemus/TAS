@@ -2,12 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 06.01.2016
- * Time: 14:56
+ * Date: 27.01.2016
+ * Time: 12:44
  */
 
 session_start();
-require_once 'actions/REST.php';
-require_once 'actions/Smarty.php';
-require_once 'actions/infoController.php';
-$smarty->display('add-status.tpl');
+require_once 'Smarty.php';
+require_once 'infoController.php';
+
+if ( isset($_SESSION['token']) ) {
+    $smarty->display('add-status.tpl');
+} else {
+    $smarty->display('login.tpl');
+}

@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li class="pure-menu-item">
-                        <a href="user-profile.php" class="pure-menu-link">
+                        <a href="profile.php?user_id={$user_id}" class="pure-menu-link">
                             <span>
                                 <i class="fa fa-user"></i>
                             </span>

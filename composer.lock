@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4d49e5a3db0c0e275903bfc8ac71e0c",
-    "content-hash": "a48f311e4ea2386a0753347d605f7308",
+    "hash": "3ceaeb5ae668013e051c20cf9864605c",
+    "content-hash": "9d59634cd9aaae2cceb1ec1e9b9d31a3",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -122,16 +122,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982"
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/4d0bdbe1206df7440219ce14c972aa57cc5e4982",
-                "reference": "4d0bdbe1206df7440219ce14c972aa57cc5e4982",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
                 "shasum": ""
             },
             "require": {
@@ -176,7 +176,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2015-11-03 01:34:55"
+            "time": "2016-01-23 01:23:02"
         },
         {
             "name": "psr/http-message",
@@ -229,16 +229,16 @@
         },
         {
             "name": "smarty/smarty",
-            "version": "v3.1.29",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "35480f10e7ce9b0fdaf23d3799d7b79463919b1e"
+                "reference": "867a2f316549fa3466df531701bb0a630ae318f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/35480f10e7ce9b0fdaf23d3799d7b79463919b1e",
-                "reference": "35480f10e7ce9b0fdaf23d3799d7b79463919b1e",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/867a2f316549fa3466df531701bb0a630ae318f3",
+                "reference": "867a2f316549fa3466df531701bb0a630ae318f3",
                 "shasum": ""
             },
             "require": {
@@ -280,13 +280,15 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2015-12-21 01:57:06"
+            "time": "2016-01-26 20:49:56"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "smarty/smarty": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

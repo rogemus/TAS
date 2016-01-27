@@ -2,37 +2,38 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 06.01.2016
- * Time: 18:30
+ * Date: 26.01.2016
+ * Time: 23:44
  */
-
-session_start();
-require_once 'actions/REST.php';
-require_once 'actions/Smarty.php';
-require_once 'actions/infoController.php';
+require_once 'Smarty.php';
+require_once 'guzzle.php';
+require_once 'statusesController.php';
+require_once 'infoController.php';
+require 'vendor/autoload.php';
 
 $user_id = $_GET['user_id'];
 
-$rest = new REST();
-$result = null;
-$rest->AddOptions(array(
-    'Content-Type: application/json'
-));
-$result = $rest->GET('/api/v1/statuses/statuses');
-$x = json_encode($result);
+//GET
+$response = $client->request('GET', '/api/v1/statuses/statuses', [
+    'headers' => [
+        'Content-type' => 'application/json',
+    ],
+]);
 
-$smarty->assign('statuses', $x);
+$statuses = (object) json_decode($response->getBody());
+
+$smarty->assign('statuses', $statuses);
 $smarty->assign('status_id', $user_id);
 
-$rest = new REST();
-$result = null;
-$rest->AddOptions(array(
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $_SESSION['token']
-));
 
-$result = $rest->GET('api/v1/users/id/'.$user_id.'');
+$response2 = $client->request('GET', 'api/v1/users/id/'.$user_id, [
+    'headers' => [
+        'Content-type' => 'application/json',
+        'Authorization' => 'Bearer ' . $_SESSION['token']
+    ],
+]);
+$user_info = (object) json_decode($response2->getBody());
 
-$smarty->assign('user', $result);
+$smarty->assign('user', $user_info);
 
 $smarty->display('profile.tpl');

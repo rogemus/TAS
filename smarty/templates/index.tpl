@@ -3,12 +3,12 @@
     {include file='module/sidebar.tpl'}
     {include file='module/top-menu.tpl'}
 
-
+    {nocache}
     <div id="main">
         <div class="wrapper">
             <div class="header"></div>
             <div class="grid">
-                {foreach from=$statuses|json_decode item=status}
+                {foreach from=$statuses item=status}
                 <div class="post-box grid-item">
                     <article class="post">
                         <div class="shadow">
@@ -46,9 +46,8 @@
                 {/foreach}
             </div>
         </div>
-
-
     </div>
+    {/nocache}
 </div>
 <script src="assets/js/scripts.js"></script>
 {include file='module/footer.tpl'}

@@ -28,30 +28,11 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
      */
     static function load($_template)
     {
-        // check runtime cache
-        if (!$_template->source->handler->recompiled &&
-            ($_template->smarty->resource_cache_mode & Smarty::RESOURCE_CACHE_ON)
-        ) {
-            $_cache_key = $_template->source->unique_resource . '#';
-            if ($_template->caching) {
-                $_cache_key .= 'caching#';
-            }
-            $_cache_key .= $_template->compile_id;
-            if (isset($_template->source->compileds[$_cache_key])) {
-                return $_template->source->compileds[$_cache_key];
-            }
-        }
         $compiled = new Smarty_Template_Compiled();
         if ($_template->source->handler->hasCompiledHandler) {
             $_template->source->handler->populateCompiledFilepath($compiled, $_template);
         } else {
             $compiled->populateCompiledFilepath($_template);
-        }
-        // runtime cache
-        if (!$_template->source->handler->recompiled &&
-            ($_template->smarty->resource_cache_mode & Smarty::RESOURCE_CACHE_ON)
-        ) {
-            $_template->source->compileds[$_cache_key] = $compiled;
         }
         return $compiled;
     }
@@ -152,8 +133,7 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
                 $_template->smarty->compile_check = $compileCheck;
             }
         }
-        $_template->smarty->ext->_subTemplate->registerSubTemplates($_template);
-
+        $_template->_subTemplateRegister();
         $this->processed = true;
     }
 
@@ -166,11 +146,13 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
     private function loadCompiledTemplate(Smarty_Internal_Template $_template)
     {
         if (function_exists('opcache_invalidate')) {
-            opcache_invalidate($_template->compiled->filepath);
+            opcache_invalidate($_template->compiled->filepath, true);
+        } elseif (function_exists('apc_compile_file')) {
+            apc_compile_file($_template->compiled->filepath);
         }
         $_smarty_tpl = $_template;
         if (defined('HHVM_VERSION')) {
-            $_template->smarty->ext->_hhvm->includeHhvm($_template, $_template->compiled->filepath);
+            eval("?>" . file_get_contents($_template->compiled->filepath));
         } else {
             include($_template->compiled->filepath);
         }
@@ -220,7 +202,6 @@ class Smarty_Template_Compiled extends Smarty_Template_Resource_Base
     {
         $_template->source->compileds = array();
         $this->file_dependency = array();
-        $this->tpl_function = array();
         $this->includes = array();
         $this->nocache_hash = null;
         $this->unifunc = null;

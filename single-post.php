@@ -2,23 +2,24 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 06.01.2016
- * Time: 16:21
+ * Date: 26.01.2016
+ * Time: 23:31
  */
 
 session_start();
-require_once 'actions/REST.php';
-require_once 'actions/Smarty.php';
-require_once 'actions/infoController.php';
+require_once 'Smarty.php';
+require 'vendor/autoload.php';
+require 'guzzle.php';
+require 'infoController.php';
 $status_id = $_GET['status_id'];
 
-$rest = new REST();
-$result = null;
-$rest->AddOptions(array(
-    'Content-Type: application/json'
-));
+$response = $client->request('GET', '/api/v1/statuses/' . $status_id, [
+    'headers' => [
+        'Content-type' => 'application/json',
+    ],
+]);
 
-$result = $rest->GET('/api/v1/statuses/' . $status_id . '');
+$result = json_decode($response->getBody());
 
 $single_status_content = $result->status->content;
 $single_status_created_at = $result->status->created_at;
@@ -40,13 +41,12 @@ $smarty->assign('single_status_avatar', $single_status_user_avatar);
 $smarty->assign('single_status_image', $single_status_image);
 
 
-$rest2 = new REST();
-$result2 = null;
-$y = null;
-$result2 = $rest2->GET('/api/v1/comments/get_comments_for_post/' . $status_id . '');
-$y = json_encode($result2);
-
-
-$smarty->assign('comments', $y);
+$response2 = $client->request('GET', '/api/v1/comments/get_comments_for_post/' . $status_id, [
+    'headers' => [
+        'Content-type' => 'application/json',
+    ],
+]);
+$comments = (object) json_decode($response2->getBody());
+$smarty->assign('comments', $comments);
 $smarty->display('single-post.tpl');
 

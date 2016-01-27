@@ -2,24 +2,20 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 13.12.2015
- * Time: 10:20
+ * Date: 26.01.2016
+ * Time: 22:57
  */
 
+require_once 'Smarty.php';
+require_once 'guzzle.php';
+require_once 'statusesController.php';
+require_once 'infoController.php';
+require 'vendor/autoload.php';
 
-
-session_start();
-require_once 'actions/REST.php';
-//require 'vendor/autoload.php';
-require_once 'actions/Smarty.php';
-require_once 'actions/infoController.php';
-require_once 'actions/statusesController.php';
-
-if ( !isset($_SESSION['token']) ) {
-    $smarty->display('login.tpl');
-} else {
+if ( isset($_SESSION['token']) ) {
     $smarty->display('index.tpl');
+} else {
+    $smarty->display('login.tpl');
 }
-
 
 

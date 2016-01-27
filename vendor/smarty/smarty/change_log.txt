@@ -1,4 +1,65 @@
-﻿ ===== 3.1.29 ===== (21.12.2015)
+﻿ ===== 3.1.30-dev ===== (xx.xx.xx)
+ 27.01.2016
+  - revert bugfix compiling {section} did create warning
+  - bugfix {$smarty.section.customer.loop} did throw compiler error https://github.com/smarty-php/smarty/issues/161
+    update of yesterdays fix
+
+ 26.01.2016
+  - improvement observe Smarty::$_CHARSET in debugging console https://github.com/smarty-php/smarty/issues/169
+  - bugfix compiling {section} did create warning
+  - bugfix {$smarty.section.customer.loop} did throw compiler error https://github.com/smarty-php/smarty/issues/161
+
+ 02.01.2016
+  - update scope handling
+  - optimize block plugin compiler
+  - improvement runtime checks if registered block plugins are callabel
+  
+ 01.01.2016
+  - remove Smarty::$resource_cache_mode property
+  
+ 31.12.2015
+  - optimization of {assign}, {if} and {while} compiled code
+  
+ 30.12.2015
+  - bugfix plugin names starting with "php" did not compile https://github.com/smarty-php/smarty/issues/147
+
+ 29.12.2015
+  - bugfix Smarty::error_reporting was not observed when display() or fetch() was called on template objects https://github.com/smarty-php/smarty/issues/145
+   
+ 28.12.2015
+  - optimization of {foreach} code size and processing
+  
+ 27.12.2015
+  - improve inheritance code
+  - update external methods
+  - code fixes
+  - PHPdoc updates
+ 
+ 25.12.2015
+  - compile {block} tag code and its processing into classes
+  - optimization replace hhvm extension by inline code
+  - new feature If ACP is enabled force an apc_compile_file() when compiled or cached template was updated
+
+ 24.12.2015
+  - new feature Compiler does now observe the template_dir setting and will create separate compiled files if required
+  - bugfix post filter did fail on template inheritance https://github.com/smarty-php/smarty/issues/144
+
+ 23.12.2015
+  - optimization move internal method decodeProperties back into template object
+  - optimization move subtemplate processing back into template object
+  - new feature  Caching does now observe the template_dir setting and will create separate cache files if required
+   
+ 22.12.2015
+  - change $xxx_dir properties from private to protected in case Smarty class gets extended
+  - code optimizations
+  
+ 21.12.2015
+  - bugfix a filepath starting with '/' or '\' on windows should normalize to the root dir
+    of current working drive https://github.com/smarty-php/smarty/issues/134
+  - optimization of filepath normalization
+  - bugfix {strip} must remove all blanks between html tags https://github.com/smarty-php/smarty/issues/136
+  
+ ===== 3.1.29 ===== (21.12.2015)
  21.12.2015
   - optimization improve speed of filetime checks on extends and extendsall resource
   

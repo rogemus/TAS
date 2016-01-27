@@ -1,21 +1,25 @@
 <div class="comments-box">
+    {nocache}
     <ul class="comments">
 
 
-        {foreach from=$comments|json_decode item=comment}
-        <li>
-           <div class="comment-header">
-                <div class="full_name"><a href="">{$comment->user->full_name}</a></div>
-                <div class="date">{$comment->created_at|date_format:"%e %b %Y"}</div>
-            </div>
-            <div class="comment-content">
-                <p class="text">{$comment->comment}</p>
-            </div>
-        </li>
+        {foreach from=$comments item=comment}
+
+            {if $comment->post_id == $smarty.get.status_id}
+                <li>
+                   <div class="comment-header">
+                        <div class="full_name"><a href="">{$comment->user->full_name}</a></div>
+                        <div class="date">{$comment->created_at|date_format:"%e %b %Y"}</div>
+                    </div>
+                    <div class="comment-content">
+                        <p class="text">{$comment->comment}</p>
+                    </div>
+                </li>
+            {/if}
         {/foreach}
     </ul>
     <div class="comments-footer">
-        <form action="actions/addCommentsController.php" method="post">
+        <form action="addCommentsController.php" method="post">
 
             <div>
                 <input type="hidden" id="status_id" value="{$smarty.get.status_id}" name="status_id"/>
@@ -27,4 +31,5 @@
             </div>
         </form>
     </div>
+    {/nocache}
 </div>

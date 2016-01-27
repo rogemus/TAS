@@ -9,7 +9,7 @@
                 <h2>OkonBOOK</h2>
             </header>
             <div class="content">
-                <form class="pure-form pure-form-stacked" action="actions/loginController.php" method="post">
+                <form class="pure-form pure-form-stacked" action="loginController.php" method="post">
                     <fieldset>
                         <p>
                             <label for="email">Email</label>

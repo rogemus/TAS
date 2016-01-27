@@ -2,14 +2,10 @@
 /**
  * Created by PhpStorm.
  * User: Kacper
- * Date: 13.12.2015
- * Time: 15:03
+ * Date: 26.01.2016
+ * Time: 22:21
  */
-//require('../vendor/smarty/smarty/libs/Smarty.class.php');
-require('Smarty.class.php');
-
-// load Smarty library
-
+require('vendor/smarty/smarty/libs/Smarty.class.php');
 
 $smarty = new Smarty;
 $smarty->debugging = true;

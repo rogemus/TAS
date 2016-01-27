@@ -2,7 +2,7 @@
 <div id="layout">
     {include file='module/sidebar.tpl'}
     {include file='module/top-menu.tpl'}
-
+    {nocache}
     <div id="main">
         <div class="wrapper">
             <div class="header"></div>
@@ -11,7 +11,7 @@
                     <article class="post">
                         <div class="shadow">
                             <div class="post-content">
-                                <form action="actions/addStatusController.php" method="post" enctype="multipart/form-data">
+                                <form action="addStatusController.php" method="post" enctype="multipart/form-data">
                                     <div class="post-main post-edit-content">
                                         <textarea name="content" class="pure-input-1">Content</textarea>
                                         <div class="post-footer">
@@ -35,6 +35,6 @@
             </div>
         </div>
     </div>
-
+    {/nocache}
 </div>
 {include file='module/footer.tpl'}
