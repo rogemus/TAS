@@ -43,7 +43,7 @@ module Comments
             requires :id, type: Integer, desc: 'Id komentarza'
           end
           get ':id', root: false, each_serializer: CommentsSerializer do
-            Comment.find(params[:id])
+            Comment.where(params[:id])
           end
 
           #curl -X DELETE http://localhost:3000/api/v1/comments/delete_comment/<id komentarza>
