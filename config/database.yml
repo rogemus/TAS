@@ -1,7 +1,11 @@
 development:
   adapter: mysql2
   encoding: utf8
+<<<<<<< HEAD
   database: "s383939_okon"
+=======
+  database: okon_db
+>>>>>>> 135104759f587fbf7772cb59f1ccc3ae3e908392
   pool: 5
   username: "s383939"
   password: "NaszaBaza12"
@@ -10,7 +14,11 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
+<<<<<<< HEAD
   database: "s383939_okon"
+=======
+  database: okon_db
+>>>>>>> 135104759f587fbf7772cb59f1ccc3ae3e908392
   pool: 5
   username: "s383939"
   password: "NaszaBaza12"
@@ -19,7 +27,11 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
+<<<<<<< HEAD
   database: "s383939_okon"
+=======
+  database: okon_db
+>>>>>>> 135104759f587fbf7772cb59f1ccc3ae3e908392
   pool: 5
   username: "s383939"
   password: "NaszaBaza12"
