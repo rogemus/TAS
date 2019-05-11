@@ -1,0 +1,25 @@
+Dodawanie zdjêæ
+curl -H 'Authorization: Bearer <token>' \
+-F avatar=@ <zdjêcie> -X POST http://localhost:3000/upload_image
+Dodawanie plików
+curl -H 'Authorization: Bearer <token>' \
+-F avatar=@ <plik> -X POST http://localhost:3000/upload_document
+
+usuwanie zdjêæ
+curl -H 'Authorization: Bearer <token>' \
+-X DELETE http://localhost:3000/delete_image/<image_id>
+Usuwanie Plików
+
+curl -H 'Authorization: Bearer <token>' \
+-X DELETE http://localhost:3000/delete_document/<document_id>
+
+
+curl -H 'Authorization: Bearer 37805c8093a3e4ad18a8ccc23455c29d6c01714470275060b5f2c87c92271ebe' -d '{"user_id":1}' -X GET http://localhost:3000/find_attachments
+
+
+curl -H 'Authorization: Bearer 37805c8093a3e4ad18a8ccc23455c29d6c01714470275060b5f2c87c92271ebe' -d '{"user_id":1}' -X GET http://localhost:3000/find_attachments
+
+curl -H 'Authorization: Bearer 37805c8093a3e4ad18a8ccc23455c29d6c01714470275060b5f2c87c92271ebe'  -X GET http://localhost:3000/api/v1/images/show_all_img_for_user/1
+
+
+curl -H 'Authorization: Bearer 37805c8093a3e4ad18a8ccc23455c29d6c01714470275060b5f2c87c92271ebe' -F file=@c:\test.pdf -X POST http://localhost:3000/api/upload_document
