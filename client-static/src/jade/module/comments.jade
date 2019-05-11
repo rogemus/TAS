@@ -1,0 +1,17 @@
+.comments-box
+    ul.comments
+      each val in [1, 2, 3, 4, 5, 6]
+        li
+          header.comment-header
+            .full_name 
+              a(href='') Janusz Janusz
+            .date
+              2015-12-12
+          .comment-content
+            p.text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quo, dolor molestiae atque, sit facere deleniti, labore in nesciunt enim, itaque quasi possimus rem. 
+    footer.comments-footer
+      div
+        textarea.pure-input-1(name="content") Content
+      div.add
+        input.pure-button.pure-input-1.pure-button-primary(type="submit" value="Submit")

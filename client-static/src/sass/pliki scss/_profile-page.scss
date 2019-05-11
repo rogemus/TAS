@@ -1,0 +1,29 @@
+.profile-page {
+  font-family: $open-sans;
+  margin: 0 auto;
+  .profile-info {
+    width: 175px;
+    .full_name {
+      @include font-size($font-slight);
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid darken($white, 10);
+      span {
+        color: $blue;
+        text-transform: capitalize;
+      }
+    }
+    .thumbnail {
+      display: block;
+      margin: 0 auto;
+    }
+    .profile-user-info {
+      @include font-size($font-minor);
+      padding: 15px;
+      color: $black;
+    }
+  }
+  .post-box {
+    width: 375px;
+  }
+}

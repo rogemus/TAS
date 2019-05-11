@@ -1,0 +1,28 @@
+//BASE
+@import "base/_setting.scss";
+//HELPERS
+@import "helpers/_mixim.scss";
+@import "helpers/_text.scss";
+@import "helpers/_wrapper.scss";
+@import "helpers/_color.scss";
+//MODULE
+@import "module/_footer.scss";
+@import "module/_header.scss";
+@import "module/_middle.scss";
+@import "module/_sidebar.scss";
+@import "module/_form.scss";
+@import "module/_single-post.scss";
+//PAGE
+@import "page/_profile-page.scss";
+@import "page/_add-edit-post-page.scss";
+@import "page/_friend-list.scss";
+main {
+  @extend %clearfix;
+  font-family: $open-sans;
+  background: darken($white, 12);
+}
+hr {
+  border: 0;
+  height: 1px;
+  background: darken($white,15);
+}

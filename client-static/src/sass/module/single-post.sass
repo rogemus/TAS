@@ -1,0 +1,77 @@
+.single-post
+  margin: 0 auto
+
+.shadow
+  box-shadow: 2px 2px 14px 0 #E0E0E0
+  border-top: 1px solid #fff
+  border-left: 1px solid #fff
+  border-right: 1px solid #E0E0E0
+  border-bottom: 1px solid #E0E0E0
+
+.post-box
+  font-family: $open-sans
+  width: 300px
+  background: #fff
+  &.post-wide
+    width: 900px
+    .thumbnail
+      display: block
+      margin: 0 auto
+      width: 125px
+      height: 125px
+      img
+        display: block
+        border-radius: 20px
+  article.post
+    padding: 0px 15px 15px 0
+    .post-content
+      header.post-header
+        border-bottom: 1px solid #e0e0e0
+        padding: 8px 15px
+        .thumbnail
+          height: 45px
+          width: 45px
+          img
+            border-radius: 15px
+            max-width: 100%
+            max-height: 100%
+            display: block
+            margin: 0 auto
+        .full_name
+          padding-top: 4px
+          a
+            +font-size($font-base)
+            color: $blue
+            padding: 5px 10px
+            text-decoration: none
+            text-transform: capitalize
+            font-family: inherit
+        .date
+          a
+            +font-size($font-x-small)
+            padding: 0 10px
+            color: $lighter-dark-blue
+            text-decoration: none
+            font-family: inherit
+      .post-main
+        color: $black
+        padding: 0
+        margin: 0
+        p
+          padding: 15px
+          line-height: normal
+      .post-img
+        height: auto
+        img
+          display: block
+          margin: 0 auto
+          max-width: 100%
+          height: auto
+      .post-footer
+        .attachment
+          padding: 15px 10px
+          border-top: 1px solid darken($white, 10)
+          a
+            span
+              +font-size($font-small)
+              padding: 0 10px

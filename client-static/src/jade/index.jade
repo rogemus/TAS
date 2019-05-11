@@ -1,0 +1,19 @@
+doctype html
+html
+  include ./module/head.jade
+  body    
+    #layout
+      include ./module/sidebar.jade
+      include ./module/top-menu.jade
+
+      #main
+        .wrapper
+          .header
+          .grid
+
+            each val in [1, 2, 3, 4, 5, 6]
+              include ./module/single-post.jade
+
+    script(src='js/app/grid.js')
+
+    include ./module/footer.jade

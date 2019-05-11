@@ -1,0 +1,18 @@
+.post-box.post-l-wide
+  article.post
+    .shadow
+      .post-content
+        form(name="add-post")
+          .post-main.post-edit-content
+            textarea.pure-input-1(name="content") Content
+            .post-footer
+              .post-attachment
+                .pure-g
+                  .pure-u-5-5.attachment-file
+                    span Add file to post
+                    input.pure-input-1(type="file" name="attachment-file")
+                  .pure-u-5-5.attachment-img
+                    span Add img to post
+                    input.pure-input-1(type="file" name="attachment-img")
+                  .pure-u-5-5.post-submit
+                     input.pure-button.pure-input-1.pure-button-primary(type="submit" value="Submit")

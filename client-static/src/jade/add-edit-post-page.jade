@@ -1,0 +1,20 @@
+doctype html
+html
+  include ./module/head.jade
+  body    
+    #layout
+      include ./module/sidebar.jade
+      include ./module/top-menu.jade
+
+      #main
+        .wrapper
+          .header
+          .add-edit-post
+            include ./module/add-edit-post.jade
+          
+
+
+
+  script(src='js/app/grid.js')
+
+  include ./module/footer.jade
