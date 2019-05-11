@@ -1,1 +1,2 @@
-# This repo contains old react projects. Most of was created araund 3 years ago.
+# This repo contains old projects for UNI. Most of was created araund 2 years ago.
+
